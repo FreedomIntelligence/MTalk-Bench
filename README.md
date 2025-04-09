@@ -1,2 +1,2 @@
 # MTalk-Bench
-MTalk-Bench: Multi-Turn Dialogue Benchmark for Speech-to-Speech Large Language Models.
+**MTalk-Bench**: **M**ulti-**T**urn Di**al**ogue Benchmar**k** for Speech-to-Speech Large Language Models.
