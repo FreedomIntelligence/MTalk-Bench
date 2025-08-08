@@ -31,7 +31,7 @@ MTalk-Bench/
 
 ## 🗃️ Dataset Access
 
-The MTalk-Bench dataset (including audio files and transcribed texts) is available on [🤗 Hugging Face Hub](https://huggingface.co/datasets/FreedomIntelligence/MTalk-Bench) under a research license.
+The MTalk-Bench dataset (including audio files and transcribed texts) is available on [🤗 MTalk-Bench](https://huggingface.co/datasets/FreedomIntelligence/MTalk-Bench) under a research license.
 
 
 ## 🚀 Quick Start
@@ -40,7 +40,7 @@ Follow the steps below to get started with **MTalk-Bench** evaluation.
 
 
 ### 1. Download the Dataset and Evaluation Prompts
-- Download the **MTalk-Bench dataset** (including audio files and transcribed texts) from the [🤗 Hugging Face Hub](https://huggingface.co/datasets/FreedomIntelligence/MTalk-Bench).
+- Download the **MTalk-Bench dataset** (including audio files and transcribed texts) from the [🤗 MTalk-Bench](https://huggingface.co/datasets/FreedomIntelligence/MTalk-Bench).
 - Clone this GitHub repository to obtain the official evaluation code and prompts.
 
 ```bash
