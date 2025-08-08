@@ -18,10 +18,10 @@ MTalk-Bench/
 ├── data/
 ├── eval_script                # Dataset preparation scripts and metadata
 ├── eval_prompt/                   # Prompt used in evaluation
-│   ├── audio_based_eval/      
+│   ├── audio_based/      
 │   │   ├── arena/                 
 │   │   └── rubrics/
-│   └── transcribed_text_based_eval/
+│   └── transcribed_text_based/
 │       ├── arena/
 │       └── rubrics/
 ├── config.yaml             # Benchmark configuration
