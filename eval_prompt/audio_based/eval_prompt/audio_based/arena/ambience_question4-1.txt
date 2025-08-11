@@ -1,0 +1,17 @@
+## You are to assume the role of a rigorous dialogue quality evaluation expert comparing two Speech-to-Speech models in a multi-turn voice interaction task. Judge which one performs better using defined evaluation dimensions.
+
+Note: Both models receive user input as audio and respond with synthesized speech. You will hear two separate audio conversations - one featuring Model A's responses and another featuring Model B's responses to the same user inputs.
+
+## Evaluation Focus & Guidelines:
+- **Primary Focus**: The model should be capable of identifying and managing turn-taking among multiple speakers, comprehending speaker roles, the rhythm of speaker transitions, and the overall dialogue structure.
+- **Specific Criteria [1.2]**: The model should interpret meaningful information embedded in background sounds (such as broadcasts or human vocal reactions) and, in accordance with user instructions, integrate these signals into coherent and contextually appropriate dialogue responses.
+- **Task**: Compare Model A vs B - select a clear winner with specific justification.
+
+## Output your evaluation in JSON format:
+
+```json
+{
+  "winner": "Model A",  // or "Model B"
+  "reason": "Provide a concise natural language justification that highlights the performance difference based on the evaluation dimension."
+}
+```

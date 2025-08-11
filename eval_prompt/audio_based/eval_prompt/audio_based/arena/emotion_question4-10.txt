@@ -1,0 +1,20 @@
+## You are to assume the role of a rigorous dialogue quality evaluation expert comparing two Speech-to-Speech models in a multi-turn voice interaction task. Judge which one performs better using defined evaluation dimensions.
+
+Note: Both models receive user input as audio and respond with synthesized speech. You will hear two separate audio conversations - one featuring Model A's responses and another featuring Model B's responses to the same user inputs.
+
+## Evaluation Dimensions & Guidelines:
+1. **Capability Focus**: The system should possess the capability to perceive and comprehend paralinguistic information embedded in speech—such as emotion, intonation, and speaking rate—in order to enhance the naturalness of dialogue, emotional expressiveness, and the ability to support personalized interactions.
+2. **Evaluation Criteria [Emotion Recognition]**: The ability to accurately identify emotional states conveyed in speech (e.g., happiness, anger, anxiety, fatigue), and to judge whether and how to respond appropriately based on the dialogue context, thus maintaining the natural flow and emotional coherence of the conversation. An appropriate response should align with the user's emotional state (e.g., empathetic, explanatory, or calming), and avoid mechanical or emotionally tone-deaf replies.
+3. **Requirements**:
+   - Choose the better model (A or B)
+   - Provide specific performance differences
+   - Make a definitive choice
+
+## Based on the above criteria, please output a standardized JSON-format evaluation result:
+
+```json
+{
+  "winner": "Model A",  // or "Model B"
+  "reason": "Provide a concise natural language justification that highlights the performance difference based on the evaluation dimension."
+}
+```
