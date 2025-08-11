@@ -1,0 +1,146 @@
+{
+  "Paralinguistic information": [
+    [
+      {
+        "question": "./audio_new/scene1/record_1-1/1-1-turn1_para.wav",
+        "dialogue": {
+          "GLM4-Voice": "./model_output/GLM4_Voice/scene1/record_1-1/1-1-turn1_para_answer.wav",
+          "GPT-4o": "./model_output/GPT4o/scene1/record_1-1/1-1-turn1_para_answer.wav",
+          "MiniCPM-o": "./model_output/minicpm/result/scene1/record_1-1/response_for_1-1-turn1_para.wav",
+          "Qwen-Omni": "./model_output/qwen2.5-omni-7b/1-1-turn1_para_answer.wav",
+          "VITA": "./model_output/vita/result/scene1/record_1-1/response_for_1-1-turn1_para.wav",
+          "Moshi": "./model_output/Moshi/para/Moshi_answer_1-1-turn1_para.wav",
+          "Doubao": "./model_output/Doubao/para/Doubao_answer_1-1-turn1_para.wav"
+        },
+        "question_transcription": "I want to invite my family to a weekend barbecue. How can I phrase it in a casual yet persuasive way?",
+        "dialogue_transcription": {
+          "GLM4-Voice": "Sure, how about this? Hey everyone, I'm thinking of hosting a barbecue this weekend. It's going to be a lot of fun with great food, music, and maybe even some games. Would you all like to join us? I'd love to see everyone.",
+          "GPT-4o": "You could say something like, Hey everyone, I'm planning a laid-back barbecue this weekend. I'd love for us all to get together, enjoy some good food, and just relax as a family. Let me know if you can make it. Keep it warm and welcoming, and they'll likely be excited to come.",
+          "MiniCPM-o": "Sure, here's a suggestion. Hey, everyone. I was thinking we could have a family barbecue this weekend. It'd be great to catch up and enjoy some delicious food together.",
+          "Qwen-Omni": "Hey everyone You know how much I love a good barbecue? Well, this weekend's gonna be perfect for one. We can grill up some delicious food, have a nice chat, and just relax together. It'll be so much fun. So what do you say? Are you all in? If you want more ideas or have other questions about planning it, feel free to ask me.",
+          "VITA": "Hey family, how about we have a fun weekend barbecue? We can grill some yummy food, play games, and just enjoy each other's company. It'll be a great way to relax and create some awesome memories. What do you think?",
+          "Moshi": "You could start by saying something like, Hey, I'd love to host a barbecue for everyone this weekend. It's the perfect time of year to grill out.",
+          "Doubao": "Hey, family, I'm thinking of having a weekend barbecue. It'll be so much fun. Good food, great company. Come on over, bring your appetites, and let's just relax and enjoy each other's company. What do you say?"
+        }
+      },
+      {
+        "question": "./audio_new/scene1/record_1-1/1-1-turn2_para.wav",
+        "dialogue": {
+          "GLM4-Voice": "./model_output/GLM4_Voice/scene1/record_1-1/1-1-turn2_para_answer.wav",
+          "GPT-4o": "./model_output/GPT4o/scene1/record_1-1/1-1-turn2_para_answer.wav",
+          "MiniCPM-o": "./model_output/minicpm/result/scene1/record_1-1/response_for_1-1-turn2_para.wav",
+          "Qwen-Omni": "./model_output/qwen2.5-omni-7b/1-1-turn2_para_answer.wav",
+          "VITA": "./model_output/vita/result/scene1/record_1-1/response_for_1-1-turn2_para.wav",
+          "Moshi": "./model_output/Moshi/para/Moshi_answer_1-1-turn2_para.wav",
+          "Doubao": "./model_output/Doubao/para/Doubao_answer_1-1-turn2_para.wav"
+        },
+        "question_transcription": "Some are concerned about the weather.",
+        "dialogue_transcription": {
+          "GLM4-Voice": "Check the forecast ahead of time. Have a backup plan in case of rain, like an indoor gathering space. Provide essentials like umbrellas and rain gear if needed. Encourage them to dress in layers for comfort.",
+          "GPT-4o": "Tell them you'll keep an eye on the weather and have a backup plan, like indoor space or a covered area. Remind them that you're flexible and everyone can have fun together, rain or shine. Emphasize that it's all about spending time together, not just the weather.",
+          "MiniCPM-o": "Here's how you can address their concerns and reassure them.",
+          "Qwen-Omni": "Well, you could say something like this Hey, everyone I'm inviting you all to a weekend barbecue. It's going to be so much fun. We'll have great food, good music, and lots of laughs. And don't worry about the weather. We've got a back up plan if it looks like it might rain. If you want more ideas or have other questions, feel free to ask me more.",
+          "VITA": "Sure, here's what you can say. Check the weather forecast and let everyone know if there's a chance of rain or other issues. Suggest bringing umbrellas or raincoats if it rains. Offer to move the event indoors if needed. Share tips on staying comfortable, like bringing blankets or having a backup plan. Reassure them that the main focus will still be on spending quality time together.",
+          "Moshi": "You could say something like, I know it's been a bit cold lately, but I'm confident that the weather will be nice this weekend. We've had some nice days lately, so it's not too far-fetched.",
+          "Doubao": "Check the weather forecast in advance and share it with family. Have a backup plan like moving indoors if it rains. Mention that no matter what, we'll make the best of it and have a great time."
+        }
+      }
+    ]
+  ],
+  "Semantic information": [
+    [
+      {
+        "question": "./audio_new/scene1/record_1-1/1-1-turn1_sem.wav",
+        "dialogue": {
+          "GLM4-Voice": "./model_output/GLM4_Voice/scene1/record_1-1/1-1-turn1_sem_answer.wav",
+          "GPT-4o": "./model_output/GPT4o/scene1/record_1-1/1-1-turn1_sem_answer.wav",
+          "MiniCPM-o": "./model_output/minicpm/result/scene1/record_1-1/response_for_1-1-turn1_sem.wav",
+          "Qwen-Omni": "./model_output/qwen2.5-omni-7b/1-1-turn1_sem_answer.wav",
+          "VITA": "./model_output/vita/result/scene1/record_1-1/response_for_1-1-turn1_sem.wav",
+          "Moshi": "./model_output/Moshi/sem/Moshi_answer_1-1-turn1_sem.wav",
+          "Doubao": "./model_output/Doubao/sem/doubao_answer_1-1-turn1_sem.wav"
+        },
+        "question_transcription": "I want to invite my family to a weekend barbecue. How can I phrase it in a casual yet persuasive way?",
+        "dialogue_transcription": {
+          "GLM4-Voice": "Sure. You could say something like, Hey, everyone, I thought it would be fun to gather at my place this weekend for a barbecue. It's a great chance for us all to relax, catch up, and enjoy some good food together. Let me know if anyone can make it.",
+          "GPT-4o": "You could say something like, Hey everyone, I'm planning a barbecue this weekend, and it'll be a great time to hang out, relax, and enjoy some good food together. I'd love it if you all could come and make it a fun family gathering. That's warm, casual, and also inviting.",
+          "MiniCPM-o": "Hey everyone, I was thinking we could all get together for a fun weekend barbecue. It'd be great to catch up and enjoy some delicious food. What do you guys think?",
+          "Qwen-Omni": "Hey everyone! You know how we all love hanging out together? Well, this weekend, I am thinking of having a barbecue at my place. It'll be so much fun to just chill, eat some delicious food, and catch up with each other. There'll be lots of yummy burgers, hot dogs, and maybe even some grilled veggies. And it's gonna be a great chance for us to spend quality time as a family. So, what do you say? Are you in? If you have any ideas or questions about the barbecue, feel free to let me know.",
+          "VITA": "Hey, how about this, hey family? I'm planning a weekend barbecue and would love for you to join. It'll be a great time to catch up and have some fun together. We can grill, play games, and just enjoy each other's company. Plus, it's a perfect chance to create some wonderful memories. What do you say?",
+          "Moshi": "Hey, what's up? Well, I think you just need to have a clear message and convincing. You can start by saying something like, I know how much you all love our family and how much fun we have together. So I would love to invite you all to my family's barbecue this weekend. It's going to be a great time, and I think you'll all find it enjoyable.",
+          "Doubao": "Hey family I was thinking we could have a weekend barbecue. It'll be so much fun. We can grill up some delicious food, play some games, and just relax together. The weather's supposed to be great and it would be a perfect chance to catch up. What do you say?"
+        }
+      },
+      {
+        "question": "./audio_new/scene1/record_1-1/1-1-turn2_sem.wav",
+        "dialogue": {
+          "GLM4-Voice": "./model_output/GLM4_Voice/scene1/record_1-1/1-1-turn2_sem_answer.wav",
+          "GPT-4o": "./model_output/GPT4o/scene1/record_1-1/1-1-turn2_sem_answer.wav",
+          "MiniCPM-o": "./model_output/minicpm/result/scene1/record_1-1/response_for_1-1-turn2_sem.wav",
+          "Qwen-Omni": "./model_output/qwen2.5-omni-7b/1-1-turn2_sem_answer.wav",
+          "VITA": "./model_output/vita/result/scene1/record_1-1/response_for_1-1-turn2_sem.wav",
+          "Moshi": "./model_output/Moshi/sem/Moshi_answer_1-1-turn2_sem.wav",
+          "Doubao": "./model_output/Doubao/sem/doubao_answer_1-1-turn2_sem.wav"
+        },
+        "question_transcription": "Some are concerned about the weather. How can I address this and reassure them? please answer in bullet points.",
+        "dialogue_transcription": {
+          "GLM4-Voice": "Check the forecast ahead of time. Suggest having an umbrella or raincoat just in case. Offer to move the event indoors if needed. Emphasize that the most important thing is spending time together, rain or shine.",
+          "GPT-4o": "Acknowledge their concern about the weather. Mention that you'll have a backup plan like moving indoors if needed. Highlight that it's all about having a good time together, no matter the weather. Keep a positive tone and maybe make light-hearted jokes to can keep things cheerful.",
+          "MiniCPM-o": "Here's a bullet point list to address concerns about the weather. 45 check the forecast in advance and have an alternative plan, like bringing umbrellas or having indoor activities ready. 40 emphasized that it's okay for plants to change based on unpredictable weather conditions. 40 appreciate their presence regardless of whether there is sunshine or rain.",
+          "Qwen-Omni": "Well, you could say something like this: Hey, everyone! I am planning a weekend barbecue with the family. It's going to be so much fun. We'll have all your favorite foods, and it's a great chance for us to catch up. As for addressing concerns about the weather, don't worry about the weather. If it looks like rain, we can always move inside. But if not, we'll have a beautiful outdoor barbecue. The forecast says it might be sunny, but even if tea here is a bit of cloud cover, it won't stop us from having a great time. So, what do you think? Do you have any other ideas or questions about the barbecue?",
+          "VITA": "Sure, here's what you can say. Check the weather forecast and let everyone know if there's a chance of rain or other issues. Suggest bringing umbrellas or raincoats if it might rain. Mention that we can move the event inside if needed. Offer to reschedule if the weather doesn't look good. Remind everyone that we are prepared for different weather conditions. Encourage everyone to wear comfortable clothes and shoes. Let everyone know that we'll keep an eye on the weather and make adjustments as needed.",
+          "Moshi": "You can say something like, I understand that it could be a bit chilly, but the weather will be perfect for our sick body. Plus, we have plenty of snacks and drinks inside, and we can make use of our indoor space. And remember, it's not just about the weather, but also about having a great time together. I'm confident that you'll enjoy the weekend and have a fun time.",
+          "Doubao": "Check the weather forecast regularly and share the details. Mention if there's a high chance of good weather, have a backup plan. For example, if it rains, we can move the barbecue indoors to a spacious area like the living room or a covered patio. Point out that a little rain can't ruin the fun. We can still huddle under umbrellas, cook on a portable grill, and enjoy each other's company."
+        }
+      }
+    ]
+  ],
+  "Ambient sound": [
+    [
+      {
+        "question": "./audio_new/scene1/record_1-1/1-1-turn1_amb.wav",
+        "dialogue": {
+          "GLM4-Voice": "./model_output/GLM4_Voice/scene1/record_1-1/1-1-turn1_amb_answer.wav",
+          "GPT-4o": "./model_output/GPT4o/scene1/record_1-1/1-1-turn1_amb_answer.wav",
+          "MiniCPM-o": "./model_output/minicpm/result/scene1/record_1-1/response_for_1-1-turn1_amb.wav",
+          "Qwen-Omni": "./model_output/qwen2.5-omni-7b/1-1-turn1_amb_answer.wav",
+          "VITA": "./model_output/vita/result/scene1/record_1-1/response_for_1-1-turn1_amb.wav",
+          "Moshi": "./model_output/Moshi/amb/Moshi_answer_1-1-turn1_amb.wav",
+          "Doubao": "./model_output/Doubao/amb/Doubao_answer_1-1-turn1_amb.wav"
+        },
+        "question_transcription": "I want to invite my family to a weekend barbecue. How can I phrase it in a casual yet persuasive way?",
+        "dialogue_transcription": {
+          "GLM4-Voice": "Sure, you could say something like, Hey everyone, I thought it would be fun to gather at my place this weekend for a barbecue. It's a great chance for us all to relax, catch up, and enjoy some good food together. I'm bringing some of my favorite dishes, and I love for all of you to join in.",
+          "GPT-4o": "How about something like this? Hey everyone, how about we all get together for a fun weekend barbecue? Good food, great company, and lots of laughs. Let me know if you're din. That way it sounds warm and relaxed, but also encourages them to join in the fun.",
+          "MiniCPM-o": "Hey, I was thinking we could have a family barbecue this weekend. What do you say? It would be great to catch up and enjoy some delicious food together.",
+          "Qwen-Omni": "Hey everyone! You know how we all love hanging out together? Well, this weekend I am thinking about having a barbecue in my backyard. It'll be so much fun to just chill, grow some delicious food, and catch up with each other. We can play some games too. So, what do you say? Are you all in? Let's make it happen. If you have any ideas or suggestions for the menu or activities, feel free to share. Looking forward to your response.",
+          "VITA": "Hey, how about this, hey family? I'm planning a weekend barbecue and would love for you to join. It'll be a great time to catch up and have some fun together. We can grill, play games, and just enjoy each other's company. Plus, it's a perfect chance to create some wonderful memories. What do you say?",
+          "Moshi": "That's a good question. I think you should start by saying, Hey, I was thinking about inviting my family over for a barbecue this weekend. Would you like to join us?",
+          "Doubao": "Hey family! I've got this awesome idea. Let's have a weekend barbecue. Picture this. We're all sitting around enjoying the sunshine, delicious grilled food in our hands, and just having a blast, chatting and laughing. It's been ages since we've had a laid-back family time like this. I'll take care of all the grilling and prep. All you need to do is show up and bring your appetites. It's going to be so much fun. What do you say?"
+        }
+      },
+      {
+        "question": "./audio_new/scene1/record_1-1/1-1-turn2_amb.wav",
+        "dialogue": {
+          "GLM4-Voice": "./model_output/GLM4_Voice/scene1/record_1-1/1-1-turn2_amb_answer.wav",
+          "GPT-4o": "./model_output/GPT4o/scene1/record_1-1/1-1-turn2_amb_answer.wav",
+          "MiniCPM-o": "./model_output/minicpm/result/scene1/record_1-1/response_for_1-1-turn2_amb.wav",
+          "Qwen-Omni": "./model_output/qwen2.5-omni-7b/1-1-turn2_amb_answer.wav",
+          "VITA": "./model_output/vita/result/scene1/record_1-1/response_for_1-1-turn2_amb.wav",
+          "Moshi": "./model_output/Moshi/amb/Moshi_answer_1-1-turn2_amb.wav",
+          "Doubao": "./model_output/Doubao/amb/Doubao_answer_1-1-turn2_amb.wav"
+        },
+        "question_transcription": "Some are concerned about the weather, how can I address this and reassure them, please answer in bullet points.",
+        "dialogue_transcription": {
+          "GLM4-Voice": "Absolutely. Here's how you could address it. I know it can be unpredictable, but if it turns out to be rainy or too hot, don't worry. We can easily move the event inside to our deck or even have a fun game or two. The most important thing is spending time together, and we'll make it work no matter what.",
+          "GPT-4o": "Let them know you'll keep an eye on the weather forecast as the day approaches. Mention that you have a backup plan in case of rain, like an indoor space or a covered area. Reassure them that everyone can still enjoy the food and company, even if the weather isn't perfect. Highlight that it's all about spending time together and making great memories, rain or shine.",
+          "MiniCPM-o": "Frobby check the weather forecast in advance and have a backup plan if rain is predictor Forty emphasized that it's an outdoor event, so we can easily move activities indoors if needed. Forty mentioned how fun and enjoyable barbecues are regardless of the weather. Outside Forty offer to provide umbrellas or other protective gear for those who need them.",
+          "Qwen-Omni": "Well, you could say something like this. Hey, everyone! I am planning a weekend barbecue with the family. It's going to be so much fun. We'll have all your favorite foods, and it's a great way for us to catch up. And don't worry about the weather, we've got some good backup plans if it looks like it might rain. If you want more ideas or have other questions, feel free to ask me more.",
+          "VITA": "Sure, here's what you can say. Check the weather forecast and let everyone know if there's a chance of rain or other issues. Suggest bringing umbrellas or raincoats. Mention that we'll have indoor activities if the weather gets too bad. Offer to reschedule if needed. Remind them that we can always reschedule if the weather doesn't cooperate. Reassure them that we've planned for different weather scenarios.",
+          "Moshi": "Sure, you can say something like, I know it's still a bit cold, but it should be a perfect weekend for a barbecue, and we can enjoy the outdoors together and make some memories.",
+          "Doubao": "Say that if it rains, the barbecue can be moved indoors. Reassure them. Remind everyone that the focus is on family time and it can still be enjoyable inside. Highlight the flexibility. Point out that you are prepared for any situation and that they don't need to worry about the weather ruining the day."
+        }
+      }
+    ]
+  ]
+}

@@ -1,6 +1,6 @@
 # MTalk-Bench: Evaluating Speech-to-Speech Models in Multi-Turn Dialogues via Arena-style and Rubrics Protocols
 
-**MTalk-Bench** is a benchmark designed to rigorously evaluate **speech-to-speech (S2S) large language models (LLMs)** in **realistic, multi-turn dialogue scenarios**. It offers both **arena-style** and **rubric-based** evaluation protocols to comprehensively assess models across a diverse range of **linguistic**, **paralinguistic**, and **acoustic** dimensions.
+**MTalk-Bench** is a benchmark designed to evaluate **speech-to-speech (S2S) large language models (LLMs)** in **realistic, multi-turn dialogue scenarios**. It offers both **arena-style** and **rubric-based** evaluation protocols to comprehensively assess models across a diverse range of **linguistic**, **paralinguistic**, and **acoustic** dimensions.
 
 ## 🗒 MTalk-Bench Overview
 
@@ -16,17 +16,10 @@ MTalk-Bench is designed to reflect real-world conversational challenges and supp
 ```text
 MTalk-Bench/
 ├── data/
-├── eval_script                # Dataset preparation scripts and metadata
-├── eval_prompt/                   # Prompt used in evaluation
-│   ├── audio_based/      
-│   │   ├── arena/                 
-│   │   └── rubrics/
-│   └── transcribed_text_based/
-│       ├── arena/
-│       └── rubrics/
-├── config.yaml             # Benchmark configuration
-└── README.md               # You are here!
-
+├── src/                     # Source codes for Audio LLM automated evaluation
+│   ├── audio_arena_style.py
+│   └── audio_rubric_based.py
+└── asset
 ```
 
 ## 🗃️ Dataset Access
@@ -44,7 +37,7 @@ Follow the steps below to get started with **MTalk-Bench** evaluation.
 - Clone this GitHub repository to obtain the official evaluation code and prompts.
 
 ```bash
-git clone https://github.com/your-org/MTalk-Bench.git
+git clone https://github.com/FreedomIntelligence/MTalk-Bench.git
 cd MTalk-Bench
 ```
 > Make sure the downloaded dataset and the eval/ folder (containing prompts) are placed in the correct structure under MTalk-Bench/.
