@@ -24,7 +24,7 @@ MTalk-Bench/
 
 ## 🗃️ Dataset Access
 
-The MTalk-Bench dataset (including audio files and transcribed texts) is available on [🤗 MTalk-Bench](https://huggingface.co/datasets/FreedomIntelligence/MTalk-Bench) under a research license.
+The MTalk-Bench dataset (including audio files, transcribed texts, and testing prompts) is available on [🤗 MTalk-Bench](https://huggingface.co/datasets/FreedomIntelligence/MTalk-Bench) under a research license.
 
 
 ## 🚀 Quick Start
@@ -32,56 +32,47 @@ The MTalk-Bench dataset (including audio files and transcribed texts) is availab
 Follow the steps below to get started with **MTalk-Bench** evaluation.
 
 
-### 1. Download the Dataset and Evaluation Prompts
-- Download the **MTalk-Bench dataset** (including audio files and transcribed texts) from the [🤗 MTalk-Bench](https://huggingface.co/datasets/FreedomIntelligence/MTalk-Bench).
-- Clone this GitHub repository to obtain the official evaluation code and prompts.
-
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/FreedomIntelligence/MTalk-Bench.git
 cd MTalk-Bench
 ```
-> Make sure the downloaded dataset and the eval/ folder (containing prompts) are placed in the correct structure under MTalk-Bench/.
 
-
-
-### 2. Choose a Model and Generate Audio Outputs   
-- Select a **speech-to-speech (S2S)** model you want to evaluate. Run the model on the MTalk-Bench dataset to generate responses in audio format.
-After inference, organize the model outputs following the required file format (see below), and save them in the `data/` folder.
-
-
-### 3. Format Your Results
-
-Your results should be stored in a `.jsonl` file, where each line represents one sample in the following format:
-
-```json
-{
-TBD
-}
+### 2. Download the Dataset
+```bash
+huggingface-cli download \
+    --repo-type dataset \
+    --resume-download \
+    ./FreedomIntelligence/MTalk-Bench \
+    --local-dir MTalk-Bench-Data
 ```
-
-- Place your `.jsonl` file under the `data/` directory.
-- Example filename: `data/my_s2s_model.jsonl`
-
-> ⚠️ Ensure all paths are relative to the root directory or absolute to avoid file not found errors.
+This will download the complete dataset (audio, transcripts, prompts) into MTalk-Bench-Data/.
 
 
+### 3. Prepare Your Model Output
+Run your chosen **speech-to-speech (S2S)** model on the MTalk-Bench dataset and generate **audio** responses.  
+Format your results as a `.json` file according to the required schema (example in `./data/sample.json`) and place it in the `data/` directory.
 
 ### 4. Run Evaluation
-
-Use the evaluation scripts under `eval_script/` to assess your model using either **arena-style** or **rubric-based** protocols.
-
+You can choose between **arena-style** and **rubric-based** evaluations, and select the type of information to evaluate (`semantic`, `paralinguistic`, or `ambient`).
 ```bash
-# Placeholder: Scripts to be released soon
-python eval_script/audio_based_eval_arena.py --input data/my_s2s_model.jsonl --config config.yaml
+# Arena-style example:
+python ./src/audio_arena_api.py \
+    --eval_type semantic \
+    --judge_model gpt-4o-audio-preview \
+    --new_data_file ./data/sample.json
+
+# Rubric-based example:
+
+python ./src/audio_rubric_api.py \
+    --eval_type paralinguistic \
+    --judge_model gemini-2.5-pro \
+    --new_data_file ./data/sample.json
 ```
-
-
-
-### 5. Analyze Results
-
-The evaluation outputs (e.g., scores, rankings, annotations) will be saved to the `results/` directory by default. You can further process or visualize them based on your research needs.
-
-#### Sample Output Format
+Available parameters:
+- eval_type: `semantic`, `paralinguistic`, `ambient`
+- judge_model: `gpt-4o-audio-preview`, `gemini-2.5-pro`
+- new_data_file: path to your `.json` result file
 
 
 
