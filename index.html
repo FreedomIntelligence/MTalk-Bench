@@ -4,107 +4,121 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MTalk-Bench: Evaluating Speech-to-Speech Models in Multi-Turn Dialogues</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Navigation Bar -->
   <nav>
-    <ul>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#methodology">Methodology</a></li>
-      <li><a href="#dataset-evaluation">Dataset & Evaluation</a></li>
-      <li><a href="#experiments-results">Experiments & Results</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="container">
+      <div class="logo">
+        <a href="#">MTalk-Bench</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#dataset-evaluation">Dataset & Evaluation</a></li>
+        <li><a href="#experiments-results">Experiments & Results</a></li>
+        <li><a href="#references">References</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Overview Section -->
-  <section id="overview">
-    <h1>MTalk-Bench Overview</h1>
-    <p>
-      MTalk-Bench is a benchmark for evaluating speech-to-speech (S2S) models in multi-turn dialogues. It introduces a comprehensive evaluation framework based on semantic, paralinguistic, and ambient sound dimensions. By combining Arena-style pairwise comparisons and Rubrics-based scoring, this benchmark aims to provide a holistic assessment of model performance.
-    </p>
-    <h2>Key Objectives</h2>
-    <ul>
-      <li>Assess the capabilities of S2S models in multi-turn dialogues.</li>
-      <li>Incorporate semantic, paralinguistic, and ambient sound dimensions in evaluations.</li>
-      <li>Provide insights into the strengths and weaknesses of current models.</li>
-    </ul>
+  <section id="overview" class="section">
+    <div class="container">
+      <h1>MTalk-Bench Overview</h1>
+      <p>
+        MTalk-Bench is a benchmark for evaluating speech-to-speech (S2S) models in multi-turn dialogues. It introduces a comprehensive evaluation framework based on three critical dimensions: <strong>Semantic Information</strong>, <strong>Paralinguistic Information</strong>, and <strong>Ambient Sound</strong>. By combining Arena-style pairwise comparisons and Rubrics-based scoring, this benchmark offers a robust assessment of model performance.
+      </p>
+      <h2>Key Objectives</h2>
+      <ul>
+        <li>Evaluate the capabilities of S2S models in multi-turn dialogues.</li>
+        <li>Incorporate semantic, paralinguistic, and ambient sound dimensions in evaluations.</li>
+        <li>Offer insights into model strengths and weaknesses for future development.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Methodology Section -->
-  <section id="methodology">
-    <h1>Methodology</h1>
-    <p>
-      MTalk-Bench uses a dual-method approach for model evaluation, integrating Arena-style pairwise comparisons and Rubrics-based absolute scoring.
-    </p>
-    <h2>Evaluation Methods</h2>
-    <h3>Arena-Style Evaluation</h3>
-    <p>
-      The Arena method evaluates model outputs through pairwise comparisons, providing relative scores based on human evaluator preferences.
-    </p>
-    <h3>Rubrics-Based Evaluation</h3>
-    <p>
-      The Rubrics method assesses each model output against detailed, fine-grained criteria, offering an absolute evaluation that provides diagnostic insights into model performance.
-    </p>
+  <section id="methodology" class="section">
+    <div class="container">
+      <h1>Methodology</h1>
+      <p>
+        MTalk-Bench adopts a dual-method approach for model evaluation, combining Arena-style pairwise comparisons with Rubrics-based absolute scoring. These methods ensure comprehensive and nuanced model assessment.
+      </p>
+      <div class="methodology-content">
+        <div class="method">
+          <h3>Arena-Style Evaluation</h3>
+          <p>The Arena method evaluates model outputs using pairwise comparisons, ranking models based on human evaluator preferences.</p>
+        </div>
+        <div class="method">
+          <h3>Rubrics-Based Evaluation</h3>
+          <p>In Rubrics-based scoring, each model output is assessed against fine-grained criteria, offering a detailed and diagnostic evaluation.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Dataset & Evaluation Section -->
-  <section id="dataset-evaluation">
-    <h1>Dataset & Evaluation</h1>
-    <p>
-      MTalk-Bench includes a comprehensive dataset consisting of multi-turn dialogues across three dimensions: Semantic Information, Paralinguistic Information, and Ambient Sound. Each dimension has specific tasks that target key capabilities like reasoning and emotional expression.
-    </p>
-    <h2>Key Features of the Dataset</h2>
-    <ul>
-      <li>More than 1,500 multi-turn dialogues.</li>
-      <li>Human and LLM-generated outputs.</li>
-      <li>Evaluation scenarios derived from communication science and linguistics.</li>
-    </ul>
+  <section id="dataset-evaluation" class="section bg-light">
+    <div class="container">
+      <h1>Dataset & Evaluation</h1>
+      <p>
+        MTalk-Bench includes a curated dataset for multi-turn dialogues that spans three key dimensions: <strong>Semantic Information</strong>, <strong>Paralinguistic Information</strong>, and <strong>Ambient Sound</strong>.
+      </p>
+      <h2>Key Features</h2>
+      <ul>
+        <li>More than 1,500 multi-turn dialogues.</li>
+        <li>Annotations for paralinguistic and ambient sound cues.</li>
+        <li>Realistic and diverse evaluation scenarios based on communication science.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Experiments & Results Section -->
-  <section id="experiments-results">
-    <h1>Experiments & Results</h1>
-    <p>
-      The experimental results demonstrate key insights into the strengths and weaknesses of various S2S models in multi-turn dialogues.
-    </p>
-    <h2>Findings</h2>
-    <ul>
-      <li>No model achieved an overall score above 80.</li>
-      <li>Paralinguistic and ambient sound tasks showed significant challenges for models.</li>
-      <li>Human and LLM evaluators showed complementary but consistent results.</li>
-    </ul>
-    <h2>Visualizations</h2>
-    <!-- Add your visualizations or charts here -->
+  <section id="experiments-results" class="section">
+    <div class="container">
+      <h1>Experiments & Results</h1>
+      <p>
+        Our experiments reveal significant insights into the performance of S2S models in multi-turn dialogues, highlighting both their strengths and limitations.
+      </p>
+      <h2>Key Findings</h2>
+      <ul>
+        <li>No model scored above 80 overall, particularly struggling in paralinguistic and ambient sound tasks.</li>
+        <li>Human and LLM evaluators provided consistent but complementary results.</li>
+        <li>Performance discrepancies between human and LLM evaluations emphasize the importance of human oversight in high-resolution ranking.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- References Section -->
-  <section id="references">
-    <h1>References</h1>
-    <ul>
-      <li>Jia, Y., et al. (2019). Direct speech-to-speech translation with a sequence-to-sequence model. <i>arXiv:1904.06037</i>.</li>
-      <li>Hashemi, H., et al. (2024). LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts. <i>Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics</i>.</li>
-      <!-- Add more references as needed -->
-    </ul>
+  <section id="references" class="section bg-light">
+    <div class="container">
+      <h1>References</h1>
+      <ul>
+        <li>Jia, Y., et al. (2019). Direct speech-to-speech translation with a sequence-to-sequence model. <i>arXiv:1904.06037</i>.</li>
+        <li>Hashemi, H., et al. (2024). LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts. <i>Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics</i>.</li>
+        <!-- Add more references as needed -->
+      </ul>
+    </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
-    <h1>Contact</h1>
-    <p>
-      For collaboration or inquiries, please contact us at <a href="mailto:contact@mtalk-bench.com">contact@mtalk-bench.com</a>.
-    </p>
-    <p>
-      Alternatively, visit our <a href="https://github.com/your-repository">GitHub page</a> for more details on the project.
-    </p>
+  <section id="contact" class="section">
+    <div class="container">
+      <h1>Contact</h1>
+      <p>For collaboration or inquiries, please contact us at <a href="mailto:contact@mtalk-bench.com">contact@mtalk-bench.com</a>.</p>
+      <p>Visit our <a href="https://github.com/your-repository">GitHub page</a> for more details on the project.</p>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 MTalk-Bench. All rights reserved.</p>
+    <div class="container">
+      <p>&copy; 2025 MTalk-Bench. All rights reserved.</p>
+    </div>
   </footer>
-
 </body>
 </html>
