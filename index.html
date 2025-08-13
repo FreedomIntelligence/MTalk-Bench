@@ -86,14 +86,11 @@
                       <span class="link-block">
                         <a href="https://huggingface.co/datasets/FreedomIntelligence/MTalk-Bench" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>🤗Dataset</span>
+                        <span>🤗 Dataset</span>
                       </a>
                       </span>
-                    </a>
-                  </span>
+
+
 
                   <!-- Github link -->
                   <span class="link-block">
@@ -141,8 +138,8 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
+<!--
+Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
@@ -179,11 +176,237 @@
 </div>
 </div>
 </section>
-<!-- End image carousel -->
+<!-- End image carousel
+-->
+
+<!-- Image gallery without carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+
+      <div class="item">
+        <img src="static/images/main_structure_comics_new.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Main constructure of MTalk-Bench.
+        </h2>
+      </div>
+
+      <div class="item">
+        <img src="static/images/Data_construction_comics_new.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Data construction pipeline.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
+<!-- Experiment Results and Analysis -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- S2S evaluation table -->
+      <div class="table-container">
+        <table class="table is-striped is-hoverable is-fullwidth is-narrow">
+          <thead>
+            <tr>
+              <th rowspan="2">S2S Models</th>
+              <th colspan="4">Human</th>
+              <th colspan="4">GPT-4o Realtime</th>
+              <th colspan="4">Gemini-2.5-pro</th>
+              <th colspan="4">Qwen-Omni-Turbo</th>
+            </tr>
+            <tr>
+              <th>Sem.</th><th>Para.</th><th>Ambi.</th><th>Ovrl. ↑</th>
+              <th>Sem.</th><th>Para.</th><th>Ambi.</th><th>Ovrl.</th>
+              <th>Sem.</th><th>Para.</th><th>Ambi.</th><th>Ovrl.</th>
+              <th>Sem.</th><th>Para.</th><th>Ambi.</th><th>Ovrl.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Arena-style Evaluation -->
+            <tr><td colspan="17" style="background:#e8f1ff;font-weight:600;font-style:italic;">Arena-style Evaluation</td></tr>
+            <tr><td colspan="17" style="background:#f5f5f5;font-weight:600;font-style:italic;">Closed-source Models</td></tr>
+      
+            <tr>
+              <th>Doubao</th>
+              <td>1023</td><td>1038</td><td>1049</td><td>1037</td>
+              <td>1008</td><td>1029</td><td>1020</td><td>1019</td>
+              <td>1012</td><td>1027</td><td>1005</td><td>1015</td>
+              <td>985</td><td>1017</td><td>997</td><td>1000</td>
+            </tr>
+            <tr>
+              <th>Qwen-Omni-Turbo</th>
+              <td>1007</td><td>1044</td><td><strong>1051</strong></td><td>1034</td>
+              <td>994</td><td>1020</td><td>986</td><td>1000</td>
+              <td>1002</td><td>982</td><td>983</td><td>989</td>
+              <td>1012</td><td>1007</td><td>1009</td><td>1009</td>
+            </tr>
+            <tr>
+              <th>GPT-4o Realtime</th>
+              <td>1041</td><td>1029</td><td>1020</td><td>1030</td>
+              <td><strong>1036</strong></td><td>1005</td><td><strong>1032</strong></td><td><strong>1024</strong></td>
+              <td>1023</td><td>1022</td><td><strong>1028</strong></td><td><strong>1025</strong></td>
+              <td>1011</td><td>984</td><td>1017</td><td>1004</td>
+            </tr>
+      
+            <tr><td colspan="17" style="background:#f5f5f5;font-weight:600;font-style:italic;">Open-source Models</td></tr>
+      
+            <tr>
+              <th>Step-Audio-Chat</th>
+              <td><strong>1058</strong></td><td><strong>1054</strong></td><td>1034</td><td><strong>1049</strong></td>
+              <td>1027</td><td>1011</td><td>1009</td><td>1016</td>
+              <td><strong>1025</strong></td><td>994</td><td>1013</td><td>1010</td>
+              <td>1007</td><td><strong>1041</strong></td><td><strong>1050</strong></td><td><strong>1033</strong></td>
+            </tr>
+            <tr>
+              <th>GLM-4-Voice</th>
+              <td>1010</td><td>1011</td><td>982</td><td>1001</td>
+              <td>1009</td><td>1004</td><td>1015</td><td>1010</td>
+              <td>1017</td><td>1023</td><td>1009</td><td>1016</td>
+              <td>1018</td><td>1001</td><td>1010</td><td>1010</td>
+            </tr>
+            <tr>
+              <th>VITA-Audio-Plus-Vanilla</th>
+              <td>1004</td><td>973</td><td>1001</td><td>993</td>
+              <td>1025</td><td>1004</td><td>1029</td><td>1019</td>
+              <td>995</td><td>999</td><td>1004</td><td>999</td>
+              <td><strong>1035</strong></td><td>994</td><td>1013</td><td>1014</td>
+            </tr>
+            <tr>
+              <th>MiniCPM-o 2.6</th>
+              <td>989</td><td>980</td><td>979</td><td>983</td>
+              <td>973</td><td>987</td><td>986</td><td>982</td>
+              <td>972</td><td>984</td><td>997</td><td>984</td>
+              <td>992</td><td>1008</td><td>994</td><td>998</td>
+            </tr>
+            <tr>
+              <th>Kimi-Audio</th>
+              <td>970</td><td>978</td><td>972</td><td>973</td>
+              <td>984</td><td><strong>1048</strong></td><td>997</td><td>1010</td>
+              <td>996</td><td><strong>1032</strong></td><td>1025</td><td>1018</td>
+              <td>990</td><td>999</td><td>976</td><td>988</td>
+            </tr>
+            <tr>
+              <th>Moshi</th>
+              <td>950</td><td>970</td><td>947</td><td>956</td>
+              <td>987</td><td>965</td><td>991</td><td>981</td>
+              <td>971</td><td>969</td><td>969</td><td>970</td>
+              <td>985</td><td>984</td><td>984</td><td>984</td>
+            </tr>
+            <tr>
+              <th>AnyGPT</th>
+              <td>942</td><td>941</td><td>931</td><td>938</td>
+              <td>956</td><td>924</td><td>960</td><td>947</td>
+              <td>977</td><td>980</td><td>990</td><td>982</td>
+              <td>1001</td><td>984</td><td>962</td><td>982</td>
+            </tr>
+            <tr>
+              <th>Human</th>
+              <td>1005</td><td>981</td><td>1034</td><td>1006</td>
+              <td>981</td><td>970</td><td>968</td><td>973</td>
+              <td>998</td><td>983</td><td>970</td><td>983</td>
+              <td>945</td><td>972</td><td>960</td><td>959</td>
+            </tr>
+      
+            <!-- Rubrics-based Evaluation -->
+            <tr><td colspan="17" style="background:#e8f1ff;font-weight:600;font-style:italic;">Rubrics-based Evaluation</td></tr>
+            <tr><td colspan="17" style="background:#f5f5f5;font-weight:600;font-style:italic;">Closed-source Models</td></tr>
+      
+            <tr>
+              <th>GPT-4o Realtime</th>
+              <td><strong>88.59</strong></td><td>73.75</td><td><strong>69.73</strong></td><td><strong>77.38</strong></td>
+              <td><strong>88.06</strong></td><td><strong>76.01</strong></td><td><strong>67.80</strong></td><td><strong>77.33</strong></td>
+              <td><strong>73.76</strong></td><td><strong>64.34</strong></td><td><strong>70.31</strong></td><td><strong>69.50</strong></td>
+              <td><strong>84.85</strong></td><td>80.33</td><td><strong>86.51</strong></td><td><strong>84.01</strong></td>
+            </tr>
+            <tr>
+              <th>Doubao</th>
+              <td>82.54</td><td>77.06</td><td>60.42</td><td>73.69</td>
+              <td>81.97</td><td>73.61</td><td>60.50</td><td>72.06</td>
+              <td>70.02</td><td>60.31</td><td>60.63</td><td>63.69</td>
+              <td>82.73</td><td>80.28</td><td>82.07</td><td>81.71</td>
+            </tr>
+            <tr>
+              <th>Qwen-Omni-Turbo</th>
+              <td>76.08</td><td><strong>78.83</strong></td><td>60.05</td><td>71.82</td>
+              <td>74.88</td><td>66.29</td><td>60.75</td><td>67.34</td>
+              <td>54.35</td><td>47.59</td><td>56.73</td><td>52.91</td>
+              <td>82.83</td><td><strong>80.71</strong></td><td>84.48</td><td>82.72</td>
+            </tr>
+      
+            <tr><td colspan="17" style="background:#f5f5f5;font-weight:600;font-style:italic;">Open-source Models</td></tr>
+      
+            <tr>
+              <th>Step-Audio-Chat</th>
+              <td>85.50</td><td>70.20</td><td>59.55</td><td>71.86</td>
+              <td>79.23</td><td>67.80</td><td>59.87</td><td>69.01</td>
+              <td>62.81</td><td>55.64</td><td>56.23</td><td>58.25</td>
+              <td>81.39</td><td>79.53</td><td>84.04</td><td>81.73</td>
+            </tr>
+            <tr>
+              <th>GLM-4-Voice</th>
+              <td>72.41</td><td>75.45</td><td>64.33</td><td>70.81</td>
+              <td>79.10</td><td>74.87</td><td>63.02</td><td>72.35</td>
+              <td>57.09</td><td>57.43</td><td>57.48</td><td>57.33</td>
+              <td>82.04</td><td>80.46</td><td>82.94</td><td>81.86</td>
+            </tr>
+            <tr>
+              <th>VITA-Audio-Plus-Vanilla</th>
+              <td>79.56</td><td>67.50</td><td>59.22</td><td>68.70</td>
+              <td>79.23</td><td>72.73</td><td>63.77</td><td>71.94</td>
+              <td>59.45</td><td>55.89</td><td>57.11</td><td>57.50</td>
+              <td>80.81</td><td>80.54</td><td>85.20</td><td>82.20</td>
+            </tr>
+            <tr>
+              <th>MiniCPM-o 2.6</th>
+              <td>63.15</td><td>57.11</td><td>46.04</td><td>55.74</td>
+              <td>71.64</td><td>70.45</td><td>58.11</td><td>66.75</td>
+              <td>49.63</td><td>51.07</td><td>49.69</td><td>50.13</td>
+              <td>75.28</td><td>75.67</td><td>78.51</td><td>76.50</td>
+            </tr>
+            <tr>
+              <th>Kimi-Audio</th>
+              <td>65.56</td><td>50.10</td><td>50.00</td><td>55.17</td>
+              <td>74.86</td><td>75.63</td><td>61.73</td><td>70.66</td>
+              <td>55.33</td><td>60.62</td><td>58.63</td><td>58.17</td>
+              <td>78.59</td><td>79.49</td><td>76.01</td><td>77.98</td>
+            </tr>
+            <tr>
+              <th>Moshi</th>
+              <td>35.05</td><td>46.58</td><td>29.58</td><td>37.26</td>
+              <td>46.39</td><td>47.15</td><td>37.74</td><td>43.76</td>
+              <td>29.73</td><td>32.15</td><td>28.68</td><td>30.18</td>
+              <td>61.62</td><td>58.99</td><td>60.93</td><td>60.55</td>
+            </tr>
+            <tr>
+              <th>AnyGPT</th>
+              <td>28.57</td><td>37.39</td><td>32.47</td><td>32.76</td>
+              <td>56.38</td><td>64.90</td><td>43.90</td><td>55.05</td>
+              <td>15.30</td><td>11.94</td><td>7.04</td><td>11.44</td>
+              <td>37.20</td><td>38.87</td><td>44.03</td><td>40.06</td>
+            </tr>
+      
+            <tr>
+              <th>Human</th>
+              <td>63.90</td><td>61.49</td><td>63.55</td><td>62.97</td>
+              <td>71.14</td><td>66.67</td><td>63.02</td><td>66.96</td>
+              <td>45.02</td><td>50.06</td><td>58.36</td><td>51.13</td>
+              <td>66.67</td><td>71.58</td><td>71.82</td><td>69.96</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <figcaption style="font-size:.9rem;color:#666;margin-top:.25rem;">
+        Combined Evaluation Results: Arena-style Elo scores are rounded to the nearest integer. ↑ indicates rows ranked by Human Overall.
+      </figcaption>
 
+      
+    </div>
+  </div>
+</section>
 
 
 
