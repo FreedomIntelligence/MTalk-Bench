@@ -1,55 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTalk-Bench: Multi-Turn Dialogue Benchmark for S2S LLMs</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #3E8E41;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        main {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            color: #3E8E41;
-        }
-        footer {
-            text-align: center;
-            background-color: #3E8E41;
-            color: white;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MTalk-Bench: Evaluating Speech-to-Speech Models in Multi-Turn Dialogues</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file -->
 </head>
 <body>
-    <header>
-        <h1>MTalk-Bench: Multi-Turn Dialogue Benchmark for S2S LLMs</h1>
-        <p>Explore the capabilities of MTalk-Bench for enhancing multi-turn dialogue systems in S2S LLMs.</p>
-    </header>
-    <main>
-        <h2>Coming Soon!</h2>
-        <p>MTalk-Bench is a powerful benchmark framework designed to improve multi-turn dialogue systems for sequence-to-sequence (S2S) models. Stay tuned for its upcoming release!</p>
-    </main>
-    <footer>
-        <p>&copy; 2025 MTalk-Bench by FreedmAI. All rights reserved.</p>
-    </footer>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#methodology">Methodology</a></li>
+      <li><a href="#dataset-evaluation">Dataset & Evaluation</a></li>
+      <li><a href="#experiments-results">Experiments & Results</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Overview Section -->
+  <section id="overview">
+    <h1>MTalk-Bench Overview</h1>
+    <p>
+      MTalk-Bench is a benchmark for evaluating speech-to-speech (S2S) models in multi-turn dialogues. It introduces a comprehensive evaluation framework based on semantic, paralinguistic, and ambient sound dimensions. By combining Arena-style pairwise comparisons and Rubrics-based scoring, this benchmark aims to provide a holistic assessment of model performance.
+    </p>
+    <h2>Key Objectives</h2>
+    <ul>
+      <li>Assess the capabilities of S2S models in multi-turn dialogues.</li>
+      <li>Incorporate semantic, paralinguistic, and ambient sound dimensions in evaluations.</li>
+      <li>Provide insights into the strengths and weaknesses of current models.</li>
+    </ul>
+  </section>
+
+  <!-- Methodology Section -->
+  <section id="methodology">
+    <h1>Methodology</h1>
+    <p>
+      MTalk-Bench uses a dual-method approach for model evaluation, integrating Arena-style pairwise comparisons and Rubrics-based absolute scoring.
+    </p>
+    <h2>Evaluation Methods</h2>
+    <h3>Arena-Style Evaluation</h3>
+    <p>
+      The Arena method evaluates model outputs through pairwise comparisons, providing relative scores based on human evaluator preferences.
+    </p>
+    <h3>Rubrics-Based Evaluation</h3>
+    <p>
+      The Rubrics method assesses each model output against detailed, fine-grained criteria, offering an absolute evaluation that provides diagnostic insights into model performance.
+    </p>
+  </section>
+
+  <!-- Dataset & Evaluation Section -->
+  <section id="dataset-evaluation">
+    <h1>Dataset & Evaluation</h1>
+    <p>
+      MTalk-Bench includes a comprehensive dataset consisting of multi-turn dialogues across three dimensions: Semantic Information, Paralinguistic Information, and Ambient Sound. Each dimension has specific tasks that target key capabilities like reasoning and emotional expression.
+    </p>
+    <h2>Key Features of the Dataset</h2>
+    <ul>
+      <li>More than 1,500 multi-turn dialogues.</li>
+      <li>Human and LLM-generated outputs.</li>
+      <li>Evaluation scenarios derived from communication science and linguistics.</li>
+    </ul>
+  </section>
+
+  <!-- Experiments & Results Section -->
+  <section id="experiments-results">
+    <h1>Experiments & Results</h1>
+    <p>
+      The experimental results demonstrate key insights into the strengths and weaknesses of various S2S models in multi-turn dialogues.
+    </p>
+    <h2>Findings</h2>
+    <ul>
+      <li>No model achieved an overall score above 80.</li>
+      <li>Paralinguistic and ambient sound tasks showed significant challenges for models.</li>
+      <li>Human and LLM evaluators showed complementary but consistent results.</li>
+    </ul>
+    <h2>Visualizations</h2>
+    <!-- Add your visualizations or charts here -->
+  </section>
+
+  <!-- References Section -->
+  <section id="references">
+    <h1>References</h1>
+    <ul>
+      <li>Jia, Y., et al. (2019). Direct speech-to-speech translation with a sequence-to-sequence model. <i>arXiv:1904.06037</i>.</li>
+      <li>Hashemi, H., et al. (2024). LLM-Rubric: A Multidimensional, Calibrated Approach to Automated Evaluation of Natural Language Texts. <i>Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics</i>.</li>
+      <!-- Add more references as needed -->
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h1>Contact</h1>
+    <p>
+      For collaboration or inquiries, please contact us at <a href="mailto:contact@mtalk-bench.com">contact@mtalk-bench.com</a>.
+    </p>
+    <p>
+      Alternatively, visit our <a href="https://github.com/your-repository">GitHub page</a> for more details on the project.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 MTalk-Bench. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
