@@ -146,40 +146,200 @@
   <div class="hero-body">
     <div class="container">
 
+      <!-- Figure 1: Framework -->
       <div class="item">
-        <img src="static/images/main_structure_comics_new.png" alt="MY ALT TEXT"/>
+        <img src="static/images/main_structure_comics_new.png"
+             alt="MTalk-Bench framework: three dimensions, nine scenarios, and dual evaluation protocols"
+             loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          Main constructure of MTalk-Bench.
+          Main structure of MTalk-Bench.
         </h2>
       </div>
-      
-      <div class="content has-text-centered" style="margin: 2rem 0;">
-        <p>
-          xxxxxxxxxxxxx
-        </p>
+
+      <!-- Text for Figure 1 -->
+      <div class="content has-text-left" style="margin: 1rem 0 2rem;">
+        <ul>
+          <li><strong>Three dimensions:</strong> <em>Semantic</em>, <em>Paralinguistic</em>, and <em>Ambient</em>.</li>
+          <li><strong>Scenario → capability mapping:</strong> Nine real-world, user-voted scenarios map to fine-grained capabilities to enable diagnostic evaluation.</li>
+          <li><strong>Dual protocols:</strong> <em>Arena</em> (pairwise with Elo) for relative rankings; <em>Rubrics</em> (hierarchical scoring) for interpretable absolute scores.</li>
+          <li><strong>Judging tracks:</strong> Human and LLM judges for agreement analysis and bias detection.</li>
+        </ul>
       </div>
 
+      <!-- Figure 2: Data pipeline -->
       <div class="item">
-        <img src="static/images/Data_construction_comics_new.png" alt="MY ALT TEXT"/>
+        <img src="static/images/Data_construction_comics_new.png"
+             alt="MTalk-Bench data pipeline: script design, audio collection, annotation, and quality control"
+             loading="lazy"/>
         <h2 class="subtitle has-text-centered">
           Data construction pipeline.
         </h2>
       </div>
+
+      <!-- Text for Figure 2 -->
+      <div class="content has-text-left" style="margin: 1rem 0 0;">
+        <ul>
+          <li><strong>Design:</strong> Draft multi-turn scripts via scenario→capability mapping; define target paralinguistic and ambient cues.</li>
+          <li><strong>Collection:</strong> Record multi-turn speech dialogues following scripts; store raw audio with metadata.</li>
+          <li><strong>Annotation:</strong> Provide transcripts plus tags for tone, emotion, emphasis, background sounds, and speaker turns.</li>
+          <li><strong>Quality control:</strong> Multi-round human checks for script fidelity and paralinguistic clarity; filter and normalize audio.</li>
+          <li><strong>Packaging:</strong> Release audio, transcripts, and metadata splits for Arena and Rubrics evaluation.</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
 
 
 
+<section class="section" id="demos">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Audio Demos</h2>
+
+    <!-- Semantic -->
+    <div class="box demo-card" data-demo="semantic">
+      <h3 class="title is-5">Semantic — Comprehension &amp; Memory</h3>
+      <p class="is-size-6 has-text-grey">
+        Task: multi-turn instruction following with memory carryover.
+      </p>
+      <div class="columns is-multiline is-variable is-4">
+        <div class="column is-half">
+          <label class="label is-size-7">Turn 1 — User</label>
+          <audio class="demo-audio" controls preload="none" aria-label="Semantic Turn 1 — User">
+            <source src="static/audio/1-1-turn1_sem.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div class="column is-half">
+          <label class="label is-size-7">Turn 2 — User</label>
+          <audio class="demo-audio" controls preload="none" aria-label="Semantic Turn 2 — User">
+            <source src="static/audio/1-1-turn2_sem.wav" type="audio/mpeg">
+
+          </audio>
+        </div>
+      </div>
+      <div class="buttons is-right">
+        <button class="button is-small is-dark js-play-seq">▶︎ Play both</button>
+        <a class="button is-small" href="static/audio/semantic_pair.zip" download>⬇︎ Download pair</a>
+      </div>
+      <details class="mt-2">
+        <summary class="is-size-7 has-text-weight-medium">Show transcripts (optional)</summary>
+        <ol class="is-size-7">
+          <li><strong>User:</strong> …</li>
+          <li><strong>Assistant:</strong> …</li>
+        </ol>
+      </details>
+    </div>
+
+    <!-- Paralinguistic -->
+    <div class="box demo-card" data-demo="paralinguistic">
+      <h3 class="title is-5">Paralinguistic — Emotion Recognition</h3>
+      <p class="is-size-6 has-text-grey">
+        Task: detect and respond with empathetic tone and prosody.
+      </p>
+      <div class="columns is-multiline is-variable is-4">
+        <div class="column is-half">
+          <label class="label is-size-7">Turn 1 — User (sad/concerned)</label>
+          <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic Turn 1 — User">
+            <source src="static/audio/1-1-turn1_para.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="column is-half">
+          <label class="label is-size-7">Turn 2 — User</label>
+          <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic Turn 2 — User">
+            <source src="static/audio/1-1-turn2_para.wav" type="audio/wav">
+          </audio>
+        </div>
+      </div>
+      <div class="buttons is-right">
+        <button class="button is-small is-dark js-play-seq">▶︎ Play both</button>
+        <a class="button is-small" href="static/audio/paralinguistic_pair.zip" download>⬇︎ Download pair</a>
+      </div>
+      <details class="mt-2">
+        <summary class="is-size-7 has-text-weight-medium">Show transcripts (optional)</summary>
+        <ol class="is-size-7">
+          <li><strong>User:</strong> …</li>
+          <li><strong>Assistant:</strong> …</li>
+        </ol>
+      </details>
+    </div>
+
+    <!-- Ambient -->
+    <div class="box demo-card" data-demo="ambient">
+      <h3 class="title is-5">Ambient — Ambient Sound Understanding</h3>
+      <p class="is-size-6 has-text-grey">
+        Task: recognize the sound of the wind and rain in the background. 
+      </p>
+      <div class="columns is-multiline is-variable is-4">
+        <div class="column is-half">
+          <label class="label is-size-7">Turn 1 — User (with ambient sound)</label>
+          <audio class="demo-audio" controls preload="none" aria-label="Ambient Turn 1 — User">
+            <source src="static/audio/1-1-turn1_amb.wav" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="column is-half">
+          <label class="label is-size-7">Turn 2 — Assistant</label>
+          <audio class="demo-audio" controls preload="none" aria-label="Ambient Turn 2 — User">
+            <source src="static/audio/1-1-turn2_amb.wav" type="audio/wav">
+          </audio>
+        </div>
+      </div>
+      <div class="buttons is-right">
+        <button class="button is-small is-dark js-play-seq">▶︎ Play both</button>
+        <a class="button is-small" href="static/audio/ambient_pair.zip" download>⬇︎ Download pair</a>
+      </div>
+      <details class="mt-2">
+        <summary class="is-size-7 has-text-weight-medium">Show transcripts (optional)</summary>
+        <ol class="is-size-7">
+          <li><strong>User:</strong> …</li>
+          <li><strong>Assistant:</strong> …</li>
+        </ol>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- 粘在页面底部（在你的 index.js 之后也行） -->
+<script>
+  // 顺序播放：点击后先播 Turn 1，结束自动播 Turn 2
+  document.querySelectorAll('.js-play-seq').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const card = btn.closest('.demo-card');
+      const audios = Array.from(card.querySelectorAll('audio'));
+      audios.forEach(a => { a.pause(); a.currentTime = 0; });
+      if (audios.length >= 2) {
+        audios[0].play();
+        audios[0].onended = function(){ audios[1].play(); };
+      }
+    });
+  });
+</script>
+
+<style>
+  #demos .box { border-radius: 14px; }
+  #demos audio { width: 100%; }
+  @media (max-width: 768px){
+    #demos .label { font-size: .8rem; }
+  }
+</style>
+
+
+
+  
 <!-- Experiment Results and Analysis -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-            <div class="content has-text-centered" style="margin: 2rem 0;">
-              <p>
-                xxxxxxxxxxxxx
-              </p>
-            </div>
+            <div style="text-align:left">
+  <ul>
+    <li><strong>Overall trends:</strong> Models are strongest on the <em>Semantic</em> dimension, with noticeable drops on <em>Paralinguistic</em> and <em>Ambient</em> tasks.</li>
+    <li><strong>Agreement between protocols:</strong> Arena and Rubrics rankings are broadly consistent and complementary, but conclusions are robust only when performance gaps are sufficiently large.</li>
+    <li><strong>LLM judging:</strong> LLM–human agreement improves when differences are clear or scales are explicit; however, automated judges show position and length biases and struggle with nonverbal acoustic cues. Converting those cues into textual annotations improves agreement.</li>
+    <li><strong>Dialogue efficiency:</strong> Longer inputs/outputs often correlate with higher scores, suggesting a tendency to trade verbosity for perceived coherence.</li>
+  </ul>
+</div>
       <!-- S2S evaluation table -->
       <div class="table-container">
         <table class="table is-striped is-hoverable is-fullwidth is-narrow">
