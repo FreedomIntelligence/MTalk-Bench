@@ -158,12 +158,10 @@
 
       <!-- Text for Figure 1 -->
       <div class="content has-text-left" style="margin: 1rem 0 2rem;">
-        <ul>
-          <li><strong>Three dimensions:</strong> <em>Semantic</em>, <em>Paralinguistic</em>, and <em>Ambient</em>.</li>
-          <li><strong>Scenario → capability mapping:</strong> Nine real-world, user-voted scenarios map to fine-grained capabilities to enable diagnostic evaluation.</li>
-          <li><strong>Dual protocols:</strong> <em>Arena</em> (pairwise with Elo) for relative rankings; <em>Rubrics</em> (hierarchical scoring) for interpretable absolute scores.</li>
-          <li><strong>Judging tracks:</strong> Human and LLM judges for agreement analysis and bias detection.</li>
-        </ul>
+        <p><strong>Three dimensions.</strong> MTalk-Bench evaluates speech-to-speech models across <em>Semantic</em>, <em>Paralinguistic</em>, and <em>Ambient</em> information, capturing both what is said and how it is said, as well as the surrounding acoustic context.</p>
+        <p><strong>Scenario → capability mapping.</strong> Nine real-world, user-voted scenarios are aligned to fine-grained capabilities so that results are not just scores, but diagnostics you can act on.</p>
+        <p><strong>Dual protocols.</strong> <em>Arena</em> uses pairwise comparison with Elo ratings to provide relative rankings, while <em>Rubrics</em> offers hierarchical, interpretable absolute scores—two complementary views of model performance.</p>
+        <p><strong>Judging tracks.</strong> Both human and LLM judges are employed to analyze agreement and potential biases, helping disentangle preference from true capability.</p>
       </div>
 
       <!-- Figure 2: Data pipeline -->
@@ -178,13 +176,11 @@
 
       <!-- Text for Figure 2 -->
       <div class="content has-text-left" style="margin: 1rem 0 0;">
-        <ul>
-          <li><strong>Design:</strong> Draft multi-turn scripts via scenario→capability mapping; define target paralinguistic and ambient cues.</li>
-          <li><strong>Collection:</strong> Record multi-turn speech dialogues following scripts; store raw audio with metadata.</li>
-          <li><strong>Annotation:</strong> Provide transcripts plus tags for tone, emotion, emphasis, background sounds, and speaker turns.</li>
-          <li><strong>Quality control:</strong> Multi-round human checks for script fidelity and paralinguistic clarity; filter and normalize audio.</li>
-          <li><strong>Packaging:</strong> Release audio, transcripts, and metadata splits for Arena and Rubrics evaluation.</li>
-        </ul>
+        <p><strong>Design.</strong> We draft multi-turn scripts via the scenario→capability mapping and specify target paralinguistic cues and ambient conditions upfront.</p>
+        <p><strong>Collection.</strong> Multi-turn speech dialogues are recorded following the scripts, and raw audio is stored with rich metadata for downstream analysis.</p>
+        <p><strong>Annotation.</strong> Each dialogue is transcribed and tagged for tone, emotion, emphasis, background sounds, and speaker turns to make non-verbal cues explicit.</p>
+        <p><strong>Quality control.</strong> Multiple rounds of human checks ensure script fidelity and clarity of paralinguistic signals, followed by filtering and normalization.</p>
+        <p><strong>Packaging.</strong> We release audio, transcripts, and metadata splits tailored for both Arena and Rubrics evaluation pipelines.</p>
       </div>
 
     </div>
@@ -205,31 +201,17 @@
       </p>
       <div class="columns is-multiline is-variable is-4">
         <div class="column is-half">
-          <label class="label is-size-7">Turn 1 — User</label>
-          <audio class="demo-audio" controls preload="none" aria-label="Semantic Turn 1 — User">
+          <audio class="demo-audio" controls preload="none" aria-label="Semantic clip 1">
             <source src="static/audio/1-1-turn1_sem.wav" type="audio/wav">
             Your browser does not support the audio element.
           </audio>
         </div>
         <div class="column is-half">
-          <label class="label is-size-7">Turn 2 — User</label>
-          <audio class="demo-audio" controls preload="none" aria-label="Semantic Turn 2 — User">
-            <source src="static/audio/1-1-turn2_sem.wav" type="audio/mpeg">
-
+          <audio class="demo-audio" controls preload="none" aria-label="Semantic clip 2">
+            <source src="static/audio/1-1-turn2_sem.wav" type="audio/wav">
           </audio>
         </div>
       </div>
-      <div class="buttons is-right">
-        <button class="button is-small is-dark js-play-seq">▶︎ Play both</button>
-        <a class="button is-small" href="static/audio/semantic_pair.zip" download>⬇︎ Download pair</a>
-      </div>
-      <details class="mt-2">
-        <summary class="is-size-7 has-text-weight-medium">Show transcripts (optional)</summary>
-        <ol class="is-size-7">
-          <li><strong>User:</strong> …</li>
-          <li><strong>Assistant:</strong> …</li>
-        </ol>
-      </details>
     </div>
 
     <!-- Paralinguistic -->
@@ -240,91 +222,45 @@
       </p>
       <div class="columns is-multiline is-variable is-4">
         <div class="column is-half">
-          <label class="label is-size-7">Turn 1 — User (sad/concerned)</label>
-          <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic Turn 1 — User">
+          <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic clip 1">
             <source src="static/audio/1-1-turn1_para.wav" type="audio/wav">
           </audio>
         </div>
         <div class="column is-half">
-          <label class="label is-size-7">Turn 2 — User</label>
-          <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic Turn 2 — User">
+          <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic clip 2">
             <source src="static/audio/1-1-turn2_para.wav" type="audio/wav">
           </audio>
         </div>
       </div>
-      <div class="buttons is-right">
-        <button class="button is-small is-dark js-play-seq">▶︎ Play both</button>
-        <a class="button is-small" href="static/audio/paralinguistic_pair.zip" download>⬇︎ Download pair</a>
-      </div>
-      <details class="mt-2">
-        <summary class="is-size-7 has-text-weight-medium">Show transcripts (optional)</summary>
-        <ol class="is-size-7">
-          <li><strong>User:</strong> …</li>
-          <li><strong>Assistant:</strong> …</li>
-        </ol>
-      </details>
     </div>
 
     <!-- Ambient -->
     <div class="box demo-card" data-demo="ambient">
       <h3 class="title is-5">Ambient — Ambient Sound Understanding</h3>
       <p class="is-size-6 has-text-grey">
-        Task: recognize the sound of the wind and rain in the background. 
+        Task: recognize the sound of the wind and rain in the background.
       </p>
       <div class="columns is-multiline is-variable is-4">
         <div class="column is-half">
-          <label class="label is-size-7">Turn 1 — User (with ambient sound)</label>
-          <audio class="demo-audio" controls preload="none" aria-label="Ambient Turn 1 — User">
-            <source src="static/audio/1-1-turn1_amb.wav" type="audio/mpeg">
+          <audio class="demo-audio" controls preload="none" aria-label="Ambient clip 1">
+            <source src="static/audio/1-1-turn1_amb.wav" type="audio/wav">
           </audio>
         </div>
         <div class="column is-half">
-          <label class="label is-size-7">Turn 2 — Assistant</label>
-          <audio class="demo-audio" controls preload="none" aria-label="Ambient Turn 2 — User">
+          <audio class="demo-audio" controls preload="none" aria-label="Ambient clip 2">
             <source src="static/audio/1-1-turn2_amb.wav" type="audio/wav">
           </audio>
         </div>
       </div>
-      <div class="buttons is-right">
-        <button class="button is-small is-dark js-play-seq">▶︎ Play both</button>
-        <a class="button is-small" href="static/audio/ambient_pair.zip" download>⬇︎ Download pair</a>
-      </div>
-      <details class="mt-2">
-        <summary class="is-size-7 has-text-weight-medium">Show transcripts (optional)</summary>
-        <ol class="is-size-7">
-          <li><strong>User:</strong> …</li>
-          <li><strong>Assistant:</strong> …</li>
-        </ol>
-      </details>
     </div>
 
   </div>
 </section>
 
-<!-- 粘在页面底部（在你的 index.js 之后也行） -->
-<script>
-  // 顺序播放：点击后先播 Turn 1，结束自动播 Turn 2
-  document.querySelectorAll('.js-play-seq').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      const card = btn.closest('.demo-card');
-      const audios = Array.from(card.querySelectorAll('audio'));
-      audios.forEach(a => { a.pause(); a.currentTime = 0; });
-      if (audios.length >= 2) {
-        audios[0].play();
-        audios[0].onended = function(){ audios[1].play(); };
-      }
-    });
-  });
-</script>
-
 <style>
   #demos .box { border-radius: 14px; }
   #demos audio { width: 100%; }
-  @media (max-width: 768px){
-    #demos .label { font-size: .8rem; }
-  }
 </style>
-
 
 
   
