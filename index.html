@@ -148,44 +148,59 @@
 
       <!-- Figure 1: Framework -->
       <div class="item">
-        <img src="static/images/main_structure_comics_new.png"
-             alt="MTalk-Bench framework: three dimensions, nine scenarios, and dual evaluation protocols"
-             loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Main structure of MTalk-Bench.
-        </h2>
+        <img
+          src="static/images/main_structure_comics_new.png"
+          alt="MTalk-Bench framework: three dimensions, nine scenarios, and dual evaluation protocols"
+          loading="lazy"
+        />
+        <h2 class="subtitle has-text-centered">Main structure of MTalk-Bench.</h2>
       </div>
 
-      <!-- Text for Figure 1 -->
-      <div class="content has-text-left" style="margin: 1rem 0 2rem;">
-        <p><strong>Three dimensions.</strong> MTalk-Bench evaluates speech-to-speech models across <em>Semantic</em>, <em>Paralinguistic</em>, and <em>Ambient</em> information, capturing both what is said and how it is said, as well as the surrounding acoustic context.</p>
-        <p><strong>Scenario → capability mapping.</strong> Nine real-world, user-voted scenarios are aligned to fine-grained capabilities so that results are not just scores, but diagnostics you can act on.</p>
-        <p><strong>Dual protocols.</strong> <em>Arena</em> uses pairwise comparison with Elo ratings to provide relative rankings, while <em>Rubrics</em> offers hierarchical, interpretable absolute scores—two complementary views of model performance.</p>
-        <p><strong>Judging tracks.</strong> Both human and LLM judges are employed to analyze agreement and potential biases, helping disentangle preference from true capability.</p>
+      <!-- Paragraphs for Figure 1 -->
+      <div class="content has-text-justified" style="margin: 1rem 0 2rem;">
+        <p>
+          <strong>MTalk-Bench</strong> organizes evaluation around three primary dimensions—<em>Semantic</em>,
+          <em>Paralinguistic</em>, and <em>Ambient</em>—and a scenario→capability mapping. Nine user-voted,
+          real-world scenarios (e.g., home, healthcare, education) drive multi-turn dialogue tests, with each
+          scenario decomposed into fine-grained capabilities to enable diagnostic analysis.
+        </p>
+        <p>
+          Two complementary protocols provide the measurement backbone. <em>Arena</em> uses pairwise comparisons
+          with Elo for robust <em>relative</em> ranking, while <em>Rubrics</em> supplies a hierarchical,
+          interpretable scale for <em>absolute</em> scoring. Both human and LLM judges are included to quantify
+          agreement and surface potential biases.
+        </p>
       </div>
 
       <!-- Figure 2: Data pipeline -->
       <div class="item">
-        <img src="static/images/Data_construction_comics_new.png"
-             alt="MTalk-Bench data pipeline: script design, audio collection, annotation, and quality control"
-             loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Data construction pipeline.
-        </h2>
+        <img
+          src="static/images/Data_construction_comics_new.png"
+          alt="MTalk-Bench data pipeline: script design, audio collection, annotation, and quality control"
+          loading="lazy"
+        />
+        <h2 class="subtitle has-text-centered">Data construction pipeline.</h2>
       </div>
 
-      <!-- Text for Figure 2 -->
-      <div class="content has-text-left" style="margin: 1rem 0 0;">
-        <p><strong>Design.</strong> We draft multi-turn scripts via the scenario→capability mapping and specify target paralinguistic cues and ambient conditions upfront.</p>
-        <p><strong>Collection.</strong> Multi-turn speech dialogues are recorded following the scripts, and raw audio is stored with rich metadata for downstream analysis.</p>
-        <p><strong>Annotation.</strong> Each dialogue is transcribed and tagged for tone, emotion, emphasis, background sounds, and speaker turns to make non-verbal cues explicit.</p>
-        <p><strong>Quality control.</strong> Multiple rounds of human checks ensure script fidelity and clarity of paralinguistic signals, followed by filtering and normalization.</p>
-        <p><strong>Packaging.</strong> We release audio, transcripts, and metadata splits tailored for both Arena and Rubrics evaluation pipelines.</p>
+      <!-- Paragraphs for Figure 2 -->
+      <div class="content has-text-justified" style="margin: 1rem 0 0;">
+        <p>
+          We first design multi-turn scripts from the scenario→capability mapping and specify target
+          paralinguistic and ambient cues. Speakers then record dialogues that follow these scripts; each turn
+          is stored with timestamps and metadata to preserve conversational dynamics.
+        </p>
+        <p>
+          Transcribers add text, speaker turns, and tags for tone, emotion, emphasis, and background sounds.
+          A multi-round quality-control pass filters low-quality samples and verifies script fidelity and cue
+          clarity. The final release bundles audio, transcripts, and ready-to-use splits for both Arena and
+          Rubrics evaluation.
+        </p>
       </div>
 
     </div>
   </div>
 </section>
+
 
 
 
