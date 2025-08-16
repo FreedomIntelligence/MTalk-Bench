@@ -141,7 +141,6 @@
 
   
 
-<!-- Figures: 可滑动切换（替换原先的 Image gallery without carousel 整段） -->
 <section class="hero is-small" id="figures">
   <div class="hero-body">
     <div class="container">
@@ -151,7 +150,9 @@
            data-autoplay="true"
            data-infinite="true"
            data-pause-on-hover="true"
-           data-pagination="true">
+           data-pagination="true"
+           data-slides-to-show="1"
+           data-slides-to-scroll="1">
         <div class="carousel-container">
 
           <!-- Slide 1 -->
@@ -160,9 +161,7 @@
               <img
                 src="static/images/main_structure_comics_new.png"
                 alt="Framework overview diagram"
-                aria-describedby="figure-1"
-                loading="lazy"
-                decoding="async">
+                aria-describedby="figure-1">
             </figure>
             <p class="has-text-centered is-size-6 has-text-grey mt-2">
               Main structure of MTalk-Bench
@@ -175,9 +174,7 @@
               <img
                 src="static/images/Data_construction_comics_new.png"
                 alt="Data pipeline diagram"
-                aria-describedby="figure-2"
-                loading="lazy"
-                decoding="async">
+                aria-describedby="figure-2">
             </figure>
             <p class="has-text-centered is-size-6 has-text-grey mt-2">
               Data construction pipeline
@@ -186,7 +183,6 @@
 
         </div>
 
-        <!-- 左右导航按钮（可选） -->
         <div class="carousel-navigation is-overlay" aria-hidden="true">
           <div class="carousel-nav-left" aria-label="Previous slide">
             <i class="fa fa-chevron-left"></i>
@@ -197,14 +193,13 @@
         </div>
       </div>
 
-      <figcaption class="has-text-centered is-size-7 has-text-grey mt-3">
-        提示：可点击左右箭头、键盘方向键，或在手机上滑动切换
-      </figcaption>
+      <figcaption class="has-text-centered is-size-7 has-text-grey mt-3"></figcaption>
     </div>
   </div>
 </section>
 
-<!-- Figure notes: rewritten & expanded（整合后的图注说明） -->
+
+<!-- Figure notes: rewritten & expanded -->
 <section class="section" id="figure-notes">
   <div class="container is-max-desktop">
     <div class="content has-text-justified">
@@ -249,15 +244,6 @@
   </div>
 </section>
 
-<!-- 轻量样式优化（可放入你的 index.css） -->
-<style>
-  #figures .image img {
-    width: 100%;
-    border-radius: 14px;
-    box-shadow: 0 6px 20px rgba(0,0,0,.06);
-  }
-</style>
-
 
 
 <section class="section" id="demos">
@@ -293,7 +279,7 @@
             </div>
           </div>
 
-          <!-- Set 2: 1-4· Reasoning & Execution (你特别指出的映射) -->
+          <!-- Set 2: 1-4· Reasoning & Execution -->
           <p class="has-text-weight-semibold is-size-6 mt-4">
             Set 2 (1-2)
             <span class="tag is-link is-light ml-2">Sub-cap: Reasoning &amp; Execution</span>
@@ -346,7 +332,7 @@
           </p>
           <div class="columns is-multiline is-variable is-4 set-block">
             <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic 1-1 — turn 1 (Emotion Generalization)">
+              <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic 1-1 — turn 1">
                 <source src="static/audio/1-1-turn1_para.wav" type="audio/wav">
               </audio>
               <div class="audio-meta mt-1">
@@ -372,7 +358,7 @@
               </audio>
             </div>
             <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic 1-2 — turn 2 (Emotion Generalization)">
+              <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic 1-2 — turn 2">
                 <source src="static/audio/1-4-turn2_para.wav" type="audio/wav">
               </audio>
               <div class="audio-meta mt-1">
@@ -471,15 +457,15 @@
 
 
 
-<!-- PDF Results Carousel -->
+<!-- Image Results Carousel (PNG) -->
 <section class="hero is-small" id="pdf-results">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">Evaluation PDFs</h2>
+      <h2 class="title is-3 has-text-centered">Evaluation Results</h2>
 
       <div id="pdf-carousel"
            class="carousel carousel-animated carousel-animate-slide"
-           aria-label="MTalk-Bench PDF results carousel"
+           aria-label="MTalk-Bench results carousel"
            data-autoplay="false"
            data-infinite="true"
            data-pause-on-hover="true"
@@ -490,22 +476,25 @@
           <div class="carousel-item is-active">
             <div class="card" style="border-radius:16px;">
               <div class="card-content">
-                <p class="title is-5 mb-3" id="pdf-1">
+                <p class="title is-5 mb-3" id="img-1">
                   Audio Evaluation Results (Arena &amp; Rubrics)
                 </p>
-                <iframe
-                  class="pdf-frame"
-                  src="static/pdfs/audio_eval.pdf#view=FitH&pagemode=none"
-                  title="Audio Evaluation Results PDF"
-                  aria-describedby="pdf-1"
-                  loading="lazy"></iframe>
+                <figure class="image">
+                  <img
+                    src="static/images/audio_eval.png"
+                    alt="Audio Evaluation Results (PNG)"
+                    aria-describedby="img-1"
+                    loading="lazy"
+                    decoding="async"
+                    style="border-radius:12px;"/>
+                </figure>
                 <div class="buttons is-centered mt-3">
                   <a class="button is-small is-dark is-rounded"
-                     href="static/pdfs/audio_eval.pdf" target="_blank" rel="noopener">
-                    Open PDF
+                     href="static/images/audio_eval.png" target="_blank" rel="noopener">
+                    Open Image
                   </a>
                   <a class="button is-small is-light is-rounded"
-                     href="static/pdfs/audio_eval.pdf" download>
+                     href="static/images/audio_eval.png" download>
                     Download
                   </a>
                 </div>
@@ -517,22 +506,25 @@
           <div class="carousel-item">
             <div class="card" style="border-radius:16px;">
               <div class="card-content">
-                <p class="title is-5 mb-3" id="pdf-2">
+                <p class="title is-5 mb-3" id="img-2">
                   Bias Analysis
                 </p>
-                <iframe
-                  class="pdf-frame"
-                  src="static/pdfs/bias_analysis.pdf#view=FitH&pagemode=none"
-                  title="Bias Analysis PDF"
-                  aria-describedby="pdf-2"
-                  loading="lazy"></iframe>
+                <figure class="image">
+                  <img
+                    src="static/images/bias_analysis.png"
+                    alt="Bias Analysis (PNG)"
+                    aria-describedby="img-2"
+                    loading="lazy"
+                    decoding="async"
+                    style="border-radius:12px;"/>
+                </figure>
                 <div class="buttons is-centered mt-3">
                   <a class="button is-small is-dark is-rounded"
-                     href="static/pdfs/bias_analysis.pdf" target="_blank" rel="noopener">
-                    Open PDF
+                     href="static/images/bias_analysis.png" target="_blank" rel="noopener">
+                    Open Image
                   </a>
                   <a class="button is-small is-light is-rounded"
-                     href="static/pdfs/bias_analysis.pdf" download>
+                     href="static/images/bias_analysis.png" download>
                     Download
                   </a>
                 </div>
@@ -544,22 +536,25 @@
           <div class="carousel-item">
             <div class="card" style="border-radius:16px;">
               <div class="card-content">
-                <p class="title is-5 mb-3" id="pdf-3">
+                <p class="title is-5 mb-3" id="img-3">
                   Turn-level Trends
                 </p>
-                <iframe
-                  class="pdf-frame"
-                  src="static/pdfs/turn_level_trends.pdf#view=FitH&pagemode=none"
-                  title="Turn-level Trends PDF"
-                  aria-describedby="pdf-3"
-                  loading="lazy"></iframe>
+                <figure class="image">
+                  <img
+                    src="static/images/turn_level_trends.png"
+                    alt="Turn-level Trends (PNG)"
+                    aria-describedby="img-3"
+                    loading="lazy"
+                    decoding="async"
+                    style="border-radius:12px;"/>
+                </figure>
                 <div class="buttons is-centered mt-3">
                   <a class="button is-small is-dark is-rounded"
-                     href="static/pdfs/turn_level_trends.pdf" target="_blank" rel="noopener">
-                    Open PDF
+                     href="static/images/turn_level_trends.png" target="_blank" rel="noopener">
+                    Open Image
                   </a>
                   <a class="button is-small is-light is-rounded"
-                     href="static/pdfs/turn_level_trends.pdf" download>
+                     href="static/images/turn_level_trends.png" download>
                     Download
                   </a>
                 </div>
@@ -569,7 +564,7 @@
 
         </div>
 
-        <!-- 左右导航 -->
+
         <div class="carousel-navigation is-overlay" aria-hidden="true">
           <div class="carousel-nav-left" aria-label="Previous slide">
             <i class="fa fa-chevron-left"></i>
@@ -580,24 +575,10 @@
         </div>
       </div>
 
-      <figcaption class="has-text-centered is-size-7 has-text-grey mt-3">
-        提示：PDF 支持左右箭头、键盘方向键与触摸滑动；如内嵌预览受限，可点击「Open PDF」在新标签页查看。
-      </figcaption>
     </div>
   </div>
 </section>
 
-<!-- 轻量样式（可移到 static/css/index.css） -->
-<style>
-  #pdf-results .card { box-shadow: 0 6px 20px rgba(0,0,0,.06); }
-  #pdf-results .pdf-frame {
-    width: 100%;
-    height: clamp(420px, 65vh, 860px);
-    border: 1px solid #eee;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.04) inset;
-  }
-</style>
 
   
   
@@ -616,10 +597,6 @@
   </div>
 </section>
 
-<!-- 轻量样式（可合到 static/css/index.css） -->
-<style>
-  #results-analysis .key-findings li { margin-bottom: .5rem; }
-</style>
 
 
 
