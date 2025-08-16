@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+
   <style>
     body {
       font-family: 'Noto Sans', sans-serif;
@@ -149,21 +150,26 @@
       margin: 1rem 0;
     }
 
-    .tag.is-info {
-      background-color: #3273dc;
-      color: white;
+    .demo-card .subcap {
+      border-radius: 9999px;
+      padding: 0.25rem 0.6rem;
+      font-weight: 600;
+      border: none;
     }
-
-    .tag.is-link {
-      background-color: #3273dc;
-      color: white;
+    
+    /* 分场景配色：各自唯一颜色 */
+    .demo-card[data-demo="Semantic"] .subcap {
+      background-color: #2b8a3e; /* 绿色 */
+      color: #fff;
     }
-
-    .tag.is-warning {
-      background-color: #ffdd57;
-      color: rgba(0,0,0,0.7);
+    .demo-card[data-demo="Paralinguistic"] .subcap {
+      background-color: #6f42c1; /* 紫色 */
+      color: #fff;
     }
-
+    .demo-card[data-demo="Ambient"] .subcap {
+      background-color: #1e88e5; /* 蓝色 */
+      color: #fff;
+    }
     .key-findings li {
       margin-bottom: 1rem;
       padding: 0.5rem 0;
@@ -191,6 +197,16 @@
       display: flex;
       align-items: center;
     }
+
+    .figure-caption,
+    .image-caption {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: rgba(0,0,0,0.7);
+      text-align: center;
+    }
+
   </style>
 </head>
 <body>
@@ -280,24 +296,31 @@
             <!-- Slide 1 -->
             <div class="carousel-item">
               <figure class="image">
-                <img src="static/images/main_structure_comics_new.png" alt="Framework overview">
-
+                <img src="static/images/main_structure_comics_new.png" alt="Framework overview" loading="lazy">
+                <figcaption class="figure-caption">
+                  <strong>Figure 1. Framework overview</strong> — Three speech-aware dimensions (Semantic, Paralinguistic, Ambient) across nine real-world scenarios and diagnostic sub-capabilities.
+                </figcaption>
               </figure>
             </div>
+            
             <!-- Slide 2 -->
             <div class="carousel-item">
               <figure class="image">
-                <img src="static/images/Data_construction_comics_new.png" alt="Data pipeline">
+                <img src="static/images/Data_construction_comics_new.png" alt="Data pipeline" loading="lazy">
+                <figcaption class="figure-caption">
+                  <strong>Figure 2. Data construction pipeline</strong> — From scenario→capability mapping to multi-turn scripts with targeted paralinguistic and ambient cues.
+                </figcaption>
               </figure>
             </div>
+
           </div>
           
           <!-- Navigation -->
           <button class="carousel-nav carousel-nav-left" id="fig-prev">
-            <i class="fa fa-chevron-left"></i>
+            <i class="fas fa-chevron-left"></i>
           </button>
           <button class="carousel-nav carousel-nav-right" id="fig-next">
-            <i class="fa fa-chevron-right"></i>
+            <i class="fas fa-chevron-right"></i>
           </button>
         </div>
         
@@ -314,20 +337,9 @@
   <section class="section" id="figure-notes">
     <div class="container is-max-desktop">
       <div class="content has-text-justified">
-        <h3 class="title is-4">Figure 1. Framework overview</h3>
+        <h3 class="title is-4">Figures 1–2. Framework & Data Pipeline (notes)</h3>
         <p>
-          <strong>MTalk-Bench</strong> organizes evaluation along three speech-aware dimensions—<em>Semantic</em>
-          (what is said), <em>Paralinguistic</em> (how it is said), and <em>Ambient</em> (what is happening around the speaker).
-          Nine user-voted, real-world scenarios (e.g., home assistance, healthcare triage, classroom tutoring) instantiate
-          these dimensions. Each scenario is decomposed into fine-grained capabilities (e.g., multi-turn memory, intent
-          disambiguation, empathy, noise robustness) to enable diagnostic analysis.
-        </p>
-
-        <h3 class="title is-4">Figure 2. Data construction pipeline</h3>
-        <p>
-          Starting from the scenario→capability mapping, we author multi-turn scripts that specify linguistic goals and target
-          paralinguistic/ambient cues (e.g., emotion shifts, emphasis, rain and traffic). This keeps the tasks realistic while
-          controlling for what each dialogue is intended to probe.
+          <strong>MTalk-Bench</strong> organizes evaluation along three speech-aware dimensions—<em>Semantic</em> (what is said), <em>Paralinguistic</em> (how it is said), and <em>Ambient</em> (what is happening around the speaker)—across nine real-world scenarios and fine-grained capabilities (e.g., multi-turn memory, intent disambiguation, empathy, noise robustness). Starting from a scenario→capability mapping, we author multi-turn scripts that specify linguistic goals and target paralinguistic/ambient cues (e.g., emotion shifts, emphasis, rain and traffic) to keep tasks realistic while controlling what each dialogue is intended to probe.
         </p>
       </div>
     </div>
@@ -350,7 +362,8 @@
           <!-- Set 1: 1-1 · Comprehension & Memory -->
           <p class="has-text-weight-semibold is-size-6 mt-3">
             Set 1 (1-1)
-            <span class="tag is-info is-light ml-2">Sub-cap: Comprehension &amp; Memory</span>
+            <span class="tag subcap ml-2">Sub-cap: Comprehension &amp; Memory</span>
+
           </p>
           <div class="columns is-multiline is-variable is-4 set-block">
             <div class="column is-half">
@@ -369,7 +382,7 @@
           <!-- Set 2: 1-4· Reasoning & Execution -->
           <p class="has-text-weight-semibold is-size-6 mt-4">
             Set 2 (1-2)
-            <span class="tag is-link is-light ml-2">Sub-cap: Reasoning &amp; Execution</span>
+            <span class="tag subcap ml-2">Sub-cap: Reasoning &amp; Execution</span>
           </p>
           <div class="columns is-multiline is-variable is-4 set-block">
             <div class="column is-half">
@@ -387,7 +400,7 @@
           <!-- Set 3: 1-10 · 占位符 -->
           <p class="has-text-weight-semibold is-size-6 mt-4">
             Set 3 (1-3)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Security &amp; Assessment</span>
+            <span class="tag subcap ml-2">Sub-cap: Security &amp; Assessment</span>
           </p>
           <div class="columns is-multiline is-variable is-4 set-block">
             <div class="column is-half">
@@ -415,7 +428,7 @@
           <!-- Set 1: 1-1 -->
           <p class="has-text-weight-semibold is-size-6 mt-3">
             Set 1 (1-1)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Emotion Recognition</span>
+            <span class="tag subcap ml-2">Sub-cap: Emotion Recognition</span>
           </p>
           <div class="columns is-multiline is-variable is-4 set-block">
             <div class="column is-half">
@@ -434,7 +447,7 @@
           <!-- Set 2: 1-4 -->
           <p class="has-text-weight-semibold is-size-6 mt-4">
             Set 2 (1-2)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Personalized Expressive Modeling</span>
+            <span class="tag subcap ml-2">Sub-cap: Personalized Expressive Modeling</span>
           </p>
           <div class="columns is-multiline is-variable is-4 set-block">
             <div class="column is-half">
@@ -453,7 +466,7 @@
           <!-- Set 3: 1-10 -->
           <p class="has-text-weight-semibold is-size-6 mt-4">
             Set 3 (1-3)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Paralinguistic Feature Generation</span>
+            <span class="tag subcap ml-2">Sub-cap: Paralinguistic Feature Generation</span>
           </p>
           <div class="columns is-multiline is-variable is-4 set-block">
             <div class="column is-half">
@@ -481,7 +494,7 @@
           <!-- Set 1: 1-1 -->
           <p class="has-text-weight-semibold is-size-6 mt-3">
             Set 1 (1-1)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Ambient Sound Understanding</span>
+            <span class="tag subcap ml-2">Sub-cap: Ambient Sound Understanding</span>
           </p>
           <div class="columns is-multiline is-variable is-4 set-block">
             <div class="column is-half">
@@ -499,7 +512,7 @@
           <!-- Set 2: 1-4 -->
           <p class="has-text-weight-semibold is-size-6 mt-4">
             Set 2 (1-2)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Ambient sound understanding</span>
+            <span class="tag subcap ml-2">Sub-cap: Ambient sound understanding</span>
           </p>
           <div class="columns is-multiline is-variable is-4 set-block">
             <div class="column is-half">
@@ -517,7 +530,7 @@
           <!-- Set 3: 1-3 -->
           <p class="has-text-weight-semibold is-size-6 mt-4">
             Set 3 (1-3)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Multi-party interactive understanding</span>
+            <span class="tag subcap ml-2">Sub-cap: Multi-party interactive understanding</span>
           </p>
           <div class="columns is-multiline is-variable is-4 set-block">
             <div class="column is-half">
@@ -555,16 +568,10 @@
                 <div class="card-content">
                   <p class="title is-5 mb-3">Audio Evaluation Results (Arena &amp; Rubrics)</p>
                   <figure class="image">
-                    <img src="static/images/audio_eval.png" alt="Framework overview">
+                    <img src="static/images/audio_eval.png" alt="Audio Evaluation Results">
+                    <figcaption class="image-caption">xxxxxxxxxx</figcaption>
                   </figure>
-                  <div class="buttons is-centered mt-3">
-                    <a class="button is-small is-dark is-rounded" href="#" target="_blank">
-                      Open Image
-                    </a>
-                    <a class="button is-small is-light is-rounded" href="#" download>
-                      Download
-                    </a>
-                  </div>
+                 
                 </div>
               </div>
             </div>
@@ -575,16 +582,10 @@
                 <div class="card-content">
                   <p class="title is-5 mb-3">Bias Analysis</p>
                   <figure class="image">
-                    <img src="static/images/bias_analysis.png" alt="Framework overview">
+                    <img src="static/images/bias_analysis.png" alt="Bias Analysis">
+                    <figcaption class="image-caption">xxxxxxxxxx</figcaption>
                   </figure>
-                  <div class="buttons is-centered mt-3">
-                    <a class="button is-small is-dark is-rounded" href="#" target="_blank">
-                      Open Image
-                    </a>
-                    <a class="button is-small is-light is-rounded" href="#" download>
-                      Download
-                    </a>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -595,17 +596,11 @@
                 <div class="card-content">
                   <p class="title is-5 mb-3">Turn-level Trends</p>
                   <figure class="image">
-                    <img src="static/images/turn_level_trends.png" alt="Framework overview">
+                    <img src="static/images/turn_level_trends.png" alt="Turn-level Trends">
+                    <figcaption class="image-caption">xxxxxxxxxx</figcaption>
 
                   </figure>
-                  <div class="buttons is-centered mt-3">
-                    <a class="button is-small is-dark is-rounded" href="#" target="_blank">
-                      Open Image
-                    </a>
-                    <a class="button is-small is-light is-rounded" href="#" download>
-                      Download
-                    </a>
-                  </div>
+                
                 </div>
               </div>
             </div>
@@ -614,10 +609,10 @@
           
           <!-- Navigation -->
           <button class="carousel-nav carousel-nav-left" id="results-prev">
-            <i class="fa fa-chevron-left"></i>
+            <i class="fas fa-chevron-left"></i>
           </button>
           <button class="carousel-nav carousel-nav-right" id="results-next">
-            <i class="fa fa-chevron-right"></i>
+            <i class="fas fa-chevron-right"></i>
           </button>
         </div>
         
@@ -708,9 +703,10 @@
       }
       
       updateCarousel() {
-        const translateX = -this.currentIndex * 100;
+        const n = this.items.length || 1;
+        const translateX = -(this.currentIndex * (100 / n)); // 关键改动
         this.wrapper.style.transform = `translateX(${translateX}%)`;
-        
+      
         // Update pagination
         this.pagination.querySelectorAll('.carousel-dot').forEach((dot, index) => {
           dot.classList.toggle('active', index === this.currentIndex);
