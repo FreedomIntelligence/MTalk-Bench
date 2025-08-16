@@ -2,50 +2,198 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="description" content="MTalk-Bench: Evaluating Speech-to-Speech Models in Multi-Turn Dialogues">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
   <title>MTalk-Bench: Evaluating Speech-to-Speech Models in Multi-Turn Dialogues via Arena-style and Rubrics Protocols</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
 
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+    }
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+    .publication-authors {
+      font-family: 'Google Sans', sans-serif;
+    }
+
+    .publication-authors a {
+      color: hsl(204, 86%, 53%) !important;
+    }
+
+    .publication-authors a:hover {
+      text-decoration: underline;
+    }
+
+    .author-block {
+      display: inline-block;
+    }
+
+    .eql-cntrb { 
+      font-size: smaller;
+    }
+
+    /* Custom Carousel Styles */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 600px; /* Fixed height for consistency */
+    }
+
+    .carousel-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .carousel-item figure {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    /* Navigation buttons */
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.7);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      z-index: 10;
+      transition: background-color 0.3s ease;
+    }
+
+    .carousel-nav:hover {
+      background: rgba(0,0,0,0.9);
+    }
+
+    .carousel-nav-left {
+      left: 20px;
+    }
+
+    .carousel-nav-right {
+      right: 20px;
+    }
+
+    /* Pagination dots */
+    .carousel-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .carousel-dot.active {
+      background: #3273dc;
+    }
+
+    /* Demo cards styling */
+    .demo-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      height: 100%;
+    }
+
+    .demo-audio {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    .set-block {
+      border-left: 3px solid #3273dc;
+      padding-left: 1rem;
+      margin: 1rem 0;
+    }
+
+    .tag.is-info {
+      background-color: #3273dc;
+      color: white;
+    }
+
+    .tag.is-link {
+      background-color: #3273dc;
+      color: white;
+    }
+
+    .tag.is-warning {
+      background-color: #ffdd57;
+      color: rgba(0,0,0,0.7);
+    }
+
+    .key-findings li {
+      margin-bottom: 1rem;
+      padding: 0.5rem 0;
+    }
+
+    /* Results carousel specific styling */
+    .results-carousel-container {
+      height: 700px; /* Larger height for result images */
+    }
+
+    .results-carousel-item .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .results-carousel-item .card-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .results-carousel-item figure {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
-
 
   <section class="hero">
     <div class="hero-body">
@@ -54,582 +202,427 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">MTalk-Bench: Evaluating Speech-to-Speech Models in Multi-Turn Dialogues via Arena-style and Rubrics Protocols</h1>
             <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="#" target="_blank">First Author</a><sup>*</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="#" target="_blank">Second Author</a><sup>*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="#" target="_blank">Third Author</a>
                   </span>
-                  </div>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Institution Name<br>Conference name and year</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+            </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- Dataset link -->
-                      <span class="link-block">
-                        <a href="https://huggingface.co/datasets/FreedomIntelligence/MTalk-Bench" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span>🤗 Dataset</span>
-                      </a>
-                      </span>
-
-
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/FreedomIntelligence/MTalk-Bench" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/FreedomIntelligence/MTalk-Bench" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span>🤗 Dataset</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/FreedomIntelligence/MTalk-Bench" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
                     <span>Code</span>
                   </a>
                 </span>
-
-                <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+                  <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            The rapid advancement of speech-to-speech (S2S) large language models (LLMs) has significantly improved real-time spoken interaction. However, current evaluation frameworks remain inadequate for assessing performance in complex, multi-turn dialogues. To address this, we introduce <strong>MTalk-Bench</strong>, a multi-turn S2S benchmark covering three core dimensions: <em>Semantic Information</em>, <em>Paralinguistic Information</em>, and <em>Ambient Sound</em>. Each dimension includes nine realistic scenarios, along with targeted tasks to assess specific capabilities such as reasoning. Our dual-method evaluation framework combines <em>Arena</em> (pairwise comparison) and <em>Rubrics</em> (absolute scoring) for complementary and consistent assessment. The benchmark includes both model and human outputs, evaluated by human evaluators and LLMs. Experimental results reveal three key findings: (1) no model achieves an overall score above 80, with significant performance drops in paralinguistic and ambient sound tasks; (2) the two evaluation methods offer complementary yet consistent perspectives; and (3) LLM-based evaluation is only reliable when model performance differences are sufficiently large. These results highlight current limitations in S2S evaluation and the need for more robust, speech-aware assessment frameworks.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-  
-
-<section class="hero is-small" id="figures">
-  <div class="hero-body">
-    <div class="container">
-      <div id="fig-carousel"
-           class="carousel carousel-animated carousel-animate-slide"
-           aria-label="MTalk-Bench figures carousel"
-           data-autoplay="true"
-           data-infinite="true"
-           data-pause-on-hover="true"
-           data-pagination="true"
-           data-slides-to-show="1"
-           data-slides-to-scroll="1">
-        <div class="carousel-container">
-
-          <!-- Slide 1 -->
-          <div class="carousel-item is-active">
-            <figure class="image">
-              <img
-                src="static/images/main_structure_comics_new.png"
-                alt="Framework overview diagram"
-                aria-describedby="figure-1">
-            </figure>
-            <p class="has-text-centered is-size-6 has-text-grey mt-2">
-              Main structure of MTalk-Bench
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The rapid advancement of speech-to-speech (S2S) large language models (LLMs) has significantly improved real-time spoken interaction. However, current evaluation frameworks remain inadequate for assessing performance in complex, multi-turn dialogues. To address this, we introduce <strong>MTalk-Bench</strong>, a multi-turn S2S benchmark covering three core dimensions: <em>Semantic Information</em>, <em>Paralinguistic Information</em>, and <em>Ambient Sound</em>. Each dimension includes nine realistic scenarios, along with targeted tasks to assess specific capabilities such as reasoning. Our dual-method evaluation framework combines <em>Arena</em> (pairwise comparison) and <em>Rubrics</em> (absolute scoring) for complementary and consistent assessment. The benchmark includes both model and human outputs, evaluated by human evaluators and LLMs. Experimental results reveal three key findings: (1) no model achieves an overall score above 80, with significant performance drops in paralinguistic and ambient sound tasks; (2) the two evaluation methods offer complementary yet consistent perspectives; and (3) LLM-based evaluation is only reliable when model performance differences are sufficiently large. These results highlight current limitations in S2S evaluation and the need for more robust, speech-aware assessment frameworks.
             </p>
           </div>
-
-          <!-- Slide 2 -->
-          <div class="carousel-item">
-            <figure class="image">
-              <img
-                src="static/images/Data_construction_comics_new.png"
-                alt="Data pipeline diagram"
-                aria-describedby="figure-2">
-            </figure>
-            <p class="has-text-centered is-size-6 has-text-grey mt-2">
-              Data construction pipeline
-            </p>
-          </div>
-
-        </div>
-
-        <div class="carousel-navigation is-overlay" aria-hidden="true">
-          <div class="carousel-nav-left" aria-label="Previous slide">
-            <i class="fa fa-chevron-left"></i>
-          </div>
-          <div class="carousel-nav-right" aria-label="Next slide">
-            <i class="fa fa-chevron-right"></i>
-          </div>
         </div>
       </div>
-
-      <figcaption class="has-text-centered is-size-7 has-text-grey mt-3"></figcaption>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<!-- Figure notes: rewritten & expanded -->
-<section class="section" id="figure-notes">
-  <div class="container is-max-desktop">
-    <div class="content has-text-justified">
-
-      <h3 class="title is-4" id="figure-1">Figure 1. Framework overview</h3>
-      <p>
-        <strong>MTalk-Bench</strong> organizes evaluation along three speech-aware dimensions—<em>Semantic</em>
-        (what is said), <em>Paralinguistic</em> (how it is said), and <em>Ambient</em> (what is happening around the speaker).
-        Nine user-voted, real-world scenarios (e.g., home assistance, healthcare triage, classroom tutoring) instantiate
-        these dimensions. Each scenario is decomposed into fine-grained capabilities (e.g., multi-turn memory, intent
-        disambiguation, empathy, noise robustness) to enable diagnostic analysis.
-      </p>
-      <p>
-        Two complementary protocols provide the measurement backbone. <em>Arena</em> performs pairwise model comparisons and
-        aggregates outcomes with Elo for robust <em>relative</em> rankings. <em>Rubrics</em> supplies an interpretable, hierarchical
-        scale for <em>absolute</em> scoring. Both human raters and LLM judges are included; their agreement is analyzed to surface
-        failure modes and potential biases.
-      </p>
-
-      <hr class="my-5">
-
-      <h3 class="title is-4" id="figure-2">Figure 2. Data construction pipeline</h3>
-      <p>
-        Starting from the scenario→capability mapping, we author multi-turn scripts that specify linguistic goals and target
-        paralinguistic/ambient cues (e.g., emotion shifts, emphasis, rain and traffic). This keeps the tasks realistic while
-        controlling for what each dialogue is intended to probe.
-      </p>
-      <p>
-        Speakers then record dialogues following the scripts; each turn is stored with timestamps and rich metadata
-        (e.g., speaker ID, mic setup, environment) to preserve conversational dynamics and acoustic context.
-      </p>
-      <p>
-        Transcribers produce verbatim text with speaker turns and annotate tone, emotion, emphasis, and salient background
-        sounds. A multi-round quality-control pass filters low-quality samples and verifies script fidelity and cue clarity.
-      </p>
-      <p>
-        The release bundles audio, transcripts, and ready-to-use splits together with templates for both Arena and Rubrics
-        evaluation, so results are directly comparable across models.
-      </p>
-
-    </div>
-  </div>
-</section>
-
-
-
-<section class="section" id="demos">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Audio Demos</h2>
-
-    <div class="columns is-multiline is-variable is-5">
-
-      <!-- Semantic -->
-      <div class="column is-12-tablet is-6-desktop">
-        <div class="box demo-card" data-demo="Semantic">
-          <h3 class="title is-5">Semantic</h3>
-          <p class="is-size-6 has-text-grey">
-            Tasks across sub-capabilities of semantic understanding.
-          </p>
-
-          <!-- Set 1: 1-1 · Comprehension & Memory -->
-          <p class="has-text-weight-semibold is-size-6 mt-3">
-            Set 1 (1-1)
-            <span class="tag is-info is-light ml-2">Sub-cap: Comprehension &amp; Memory</span>
-          </p>
-          <div class="columns is-multiline is-variable is-4 set-block">
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Semantic 1-1 — turn 1">
-                <source src="static/audio/1-1-turn1_sem.wav" type="audio/wav">
-                Your browser does not support the audio element.
-              </audio>
-            </div>
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Semantic 1-1 — turn 2">
-                <source src="static/audio/1-1-turn2_sem.wav" type="audio/wav">
-              </audio>
-            </div>
-          </div>
-
-          <!-- Set 2: 1-4· Reasoning & Execution -->
-          <p class="has-text-weight-semibold is-size-6 mt-4">
-            Set 2 (1-2)
-            <span class="tag is-link is-light ml-2">Sub-cap: Reasoning &amp; Execution</span>
-          </p>
-          <div class="columns is-multiline is-variable is-4 set-block">
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Semantic 1-2 — turn 1 (Reasoning & Execution)">
-                <source src="static/audio/1-4-turn1_sem.wav" type="audio/wav">
-              </audio>
-            </div>
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Semantic 1-2 — turn 2 (Reasoning & Execution)">
-                <source src="static/audio/1-4-turn2_sem.wav" type="audio/wav">
-              </audio>
-            </div>
-          </div>
-
-          <!-- Set 3: 1-10 · 占位符 -->
-          <p class="has-text-weight-semibold is-size-6 mt-4">
-            Set 3 (1-3)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Security &amp; Assessment</span>
-          </p>
-          <div class="columns is-multiline is-variable is-4 set-block">
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Semantic 1-3 — turn 1">
-                <source src="static/audio/1-10-turn1_sem.wav" type="audio/wav">
-              </audio>
-            </div>
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Semantic 1-3 — turn 2">
-                <source src="static/audio/1-10-turn2_sem.wav" type="audio/wav">
-              </audio>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Paralinguistic -->
-      <div class="column is-12-tablet is-6-desktop">
-        <div class="box demo-card" data-demo="Paralinguistic">
-          <h3 class="title is-5">Paralinguistic</h3>
-          <p class="is-size-6 has-text-grey">
-            Tasks emphasize tone, emotion, emphasis, and prosody.
-          </p>
-
-          <!-- Set 1: 1-1 -->
-          <p class="has-text-weight-semibold is-size-6 mt-3">
-            Set 1 (1-1)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Emotion Recognition</span>
-          </p>
-          <div class="columns is-multiline is-variable is-4 set-block">
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic 1-1 — turn 1">
-                <source src="static/audio/1-1-turn1_para.wav" type="audio/wav">
-              </audio>
-
-            </div>
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic 1-1 — turn 2">
-                <source src="static/audio/1-1-turn2_para.wav" type="audio/wav">
-              </audio>
-            </div>
-          </div>
-
-          <!-- Set 2: 1-4 -->
-          <p class="has-text-weight-semibold is-size-6 mt-4">
-            Set 2 (1-2)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Personalized Expressive Modeling</span>
-          </p>
-          <div class="columns is-multiline is-variable is-4 set-block">
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic 1-2 — turn 1">
-                <source src="static/audio/1-4-turn1_para.wav" type="audio/wav">
-              </audio>
-            </div>
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic 1-2 — turn 2">
-                <source src="static/audio/1-4-turn2_para.wav" type="audio/wav">
-              </audio>
-
-            </div>
-          </div>
-
-          <!-- Set 3: 1-10 -->
-          <p class="has-text-weight-semibold is-size-6 mt-4">
-            Set 3 (1-3)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Paralinguistic Feature Generation</span>
-          </p>
-          <div class="columns is-multiline is-variable is-4 set-block">
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic 1-3 — turn 1">
-                <source src="static/audio/1-10-turn1_para.wav" type="audio/wav">
-              </audio>
-            </div>
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic 1-3 — turn 2">
-                <source src="static/audio/1-10-turn2_para.wav" type="audio/wav">
-              </audio>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ambient -->
-      <div class="column is-12-tablet is-6-desktop">
-        <div class="box demo-card" data-demo="Ambient">
-          <h3 class="title is-5">Ambient </h3>
-          <p class="is-size-6 has-text-grey">
-            Tasks focus on recognizing and leveraging background sounds.
-          </p>
-
-          <!-- Set 1: 1-1 -->
-          <p class="has-text-weight-semibold is-size-6 mt-3">
-            Set 1 (1-1)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Ambient Sound Understanding</span>
-          </p>
-          <div class="columns is-multiline is-variable is-4 set-block">
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Ambient sample1 — turn 1">
-                <source src="static/audio/1-1-turn1_amb.wav" type="audio/wav">
-              </audio>
-            </div>
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Ambient sample1 — turn 2">
-                <source src="static/audio/1-1-turn2_amb.wav" type="audio/wav">
-              </audio>
-            </div>
-          </div>
-
-          <!-- Set 2: 1-4 -->
-          <p class="has-text-weight-semibold is-size-6 mt-4">
-            Set 2 (1-2)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Ambient sound understanding</span>
-          </p>
-          <div class="columns is-multiline is-variable is-4 set-block">
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Ambient sample2 — turn 1">
-                <source src="static/audio/1-4-turn1_amb.wav" type="audio/wav">
-              </audio>
-            </div>
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Ambient sample2 — turn 2">
-                <source src="static/audio/1-4-turn2_amb.wav" type="audio/wav">
-              </audio>
-            </div>
-          </div>
-
-          <!-- Set 3: 1-3 -->
-          <p class="has-text-weight-semibold is-size-6 mt-4">
-            Set 3 (1-3)
-            <span class="tag is-warning is-light ml-2">Sub-cap: Multi-party interactive understanding</span>
-          </p>
-          <div class="columns is-multiline is-variable is-4 set-block">
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Ambient sample3 — turn 1">
-                <source src="static/audio/1-10-turn1_amb.wav" type="audio/wav">
-              </audio>
-            </div>
-            <div class="column is-half">
-              <audio class="demo-audio" controls preload="none" aria-label="Ambient sample3 — turn 2">
-                <source src="static/audio/1-10-turn2_amb.wav" type="audio/wav">
-              </audio>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /columns -->
-  </div>
-</section>
-
-
-
-<!-- Image Results Carousel (PNG) -->
-<section class="hero is-small" id="pdf-results">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Evaluation Results</h2>
-
-      <div id="pdf-carousel"
-           class="carousel carousel-animated carousel-animate-slide"
-           aria-label="MTalk-Bench results carousel"
-           data-autoplay="false"
-           data-infinite="true"
-           data-pause-on-hover="true"
-           data-pagination="true">
+  <!-- Framework Figures Carousel -->
+  <section class="hero is-small" id="figures">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Framework Overview</h2>
+        
         <div class="carousel-container">
-
-          <!-- Slide 1: Audio evaluation -->
-          <div class="carousel-item is-active">
-            <div class="card" style="border-radius:16px;">
-              <div class="card-content">
-                <p class="title is-5 mb-3" id="img-1">
-                  Audio Evaluation Results (Arena &amp; Rubrics)
-                </p>
-                <figure class="image">
-                  <img
-                    src="static/images/audio_eval.png"
-                    alt="Audio Evaluation Results (PNG)"
-                    aria-describedby="img-1"
-                    loading="lazy"
-                    decoding="async"
-                    style="border-radius:12px;"/>
-                </figure>
-                <div class="buttons is-centered mt-3">
-                  <a class="button is-small is-dark is-rounded"
-                     href="static/images/audio_eval.png" target="_blank" rel="noopener">
-                    Open Image
-                  </a>
-                  <a class="button is-small is-light is-rounded"
-                     href="static/images/audio_eval.png" download>
-                    Download
-                  </a>
-                </div>
-              </div>
+          <div class="carousel-wrapper" id="fig-carousel-wrapper">
+            <!-- Slide 1 -->
+            <div class="carousel-item">
+              <figure class="image">
+                <img src="https://via.placeholder.com/800x600/3273dc/ffffff?text=Main+Structure+of+MTalk-Bench" 
+                     alt="Framework overview diagram">
+              </figure>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <figure class="image">
+                <img src="https://via.placeholder.com/800x600/48c774/ffffff?text=Data+Construction+Pipeline" 
+                     alt="Data pipeline diagram">
+              </figure>
             </div>
           </div>
-
-          <!-- Slide 2: Bias analysis -->
-          <div class="carousel-item">
-            <div class="card" style="border-radius:16px;">
-              <div class="card-content">
-                <p class="title is-5 mb-3" id="img-2">
-                  Bias Analysis
-                </p>
-                <figure class="image">
-                  <img
-                    src="static/images/bias_analysis.png"
-                    alt="Bias Analysis (PNG)"
-                    aria-describedby="img-2"
-                    loading="lazy"
-                    decoding="async"
-                    style="border-radius:12px;"/>
-                </figure>
-                <div class="buttons is-centered mt-3">
-                  <a class="button is-small is-dark is-rounded"
-                     href="static/images/bias_analysis.png" target="_blank" rel="noopener">
-                    Open Image
-                  </a>
-                  <a class="button is-small is-light is-rounded"
-                     href="static/images/bias_analysis.png" download>
-                    Download
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3: Turn-level trends -->
-          <div class="carousel-item">
-            <div class="card" style="border-radius:16px;">
-              <div class="card-content">
-                <p class="title is-5 mb-3" id="img-3">
-                  Turn-level Trends
-                </p>
-                <figure class="image">
-                  <img
-                    src="static/images/turn_level_trends.png"
-                    alt="Turn-level Trends (PNG)"
-                    aria-describedby="img-3"
-                    loading="lazy"
-                    decoding="async"
-                    style="border-radius:12px;"/>
-                </figure>
-                <div class="buttons is-centered mt-3">
-                  <a class="button is-small is-dark is-rounded"
-                     href="static/images/turn_level_trends.png" target="_blank" rel="noopener">
-                    Open Image
-                  </a>
-                  <a class="button is-small is-light is-rounded"
-                     href="static/images/turn_level_trends.png" download>
-                    Download
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <div class="carousel-navigation is-overlay" aria-hidden="true">
-          <div class="carousel-nav-left" aria-label="Previous slide">
+          
+          <!-- Navigation -->
+          <button class="carousel-nav carousel-nav-left" id="fig-prev">
             <i class="fa fa-chevron-left"></i>
-          </div>
-          <div class="carousel-nav-right" aria-label="Next slide">
+          </button>
+          <button class="carousel-nav carousel-nav-right" id="fig-next">
             <i class="fa fa-chevron-right"></i>
-          </div>
+          </button>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="carousel-pagination" id="fig-pagination">
+          <span class="carousel-dot active" data-slide="0"></span>
+          <span class="carousel-dot" data-slide="1"></span>
         </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Figure Descriptions -->
+  <section class="section" id="figure-notes">
+    <div class="container is-max-desktop">
+      <div class="content has-text-justified">
+        <h3 class="title is-4">Figure 1. Framework overview</h3>
+        <p>
+          <strong>MTalk-Bench</strong> organizes evaluation along three speech-aware dimensions—<em>Semantic</em>
+          (what is said), <em>Paralinguistic</em> (how it is said), and <em>Ambient</em> (what is happening around the speaker).
+          Nine user-voted, real-world scenarios (e.g., home assistance, healthcare triage, classroom tutoring) instantiate
+          these dimensions. Each scenario is decomposed into fine-grained capabilities (e.g., multi-turn memory, intent
+          disambiguation, empathy, noise robustness) to enable diagnostic analysis.
+        </p>
 
-  
-  
-<!-- Experiment Results — Key Findings -->
-<section class="section" id="results-analysis">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Experiment Results — Key Findings</h2>
-    <div class="content has-text-justified">
-      <ul class="key-findings">
-        <li><strong>Overall trends:</strong> Models are strongest on the <em>Semantic</em> dimension, with noticeable drops on <em>Paralinguistic</em> and <em>Ambient</em> tasks.</li>
-        <li><strong>Agreement between protocols:</strong> Arena and Rubrics rankings are broadly consistent and complementary, but conclusions are robust only when performance gaps are sufficiently large.</li>
-        <li><strong>LLM judging:</strong> LLM–human agreement improves when differences are clear or scales are explicit; however, automated judges show position and length biases and struggle with nonverbal acoustic cues. Converting those cues into textual annotations improves agreement.</li>
-        <li><strong>Dialogue efficiency:</strong> Longer inputs/outputs often correlate with higher scores, suggesting a tendency to trade verbosity for perceived coherence.</li>
-      </ul>
+        <h3 class="title is-4">Figure 2. Data construction pipeline</h3>
+        <p>
+          Starting from the scenario→capability mapping, we author multi-turn scripts that specify linguistic goals and target
+          paralinguistic/ambient cues (e.g., emotion shifts, emphasis, rain and traffic). This keeps the tasks realistic while
+          controlling for what each dialogue is intended to probe.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Audio Demos -->
+  <section class="section" id="demos">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Audio Demos</h2>
+      <div class="columns is-multiline is-variable is-5">
+        
+        <!-- Semantic -->
+        <div class="column is-12-tablet is-6-desktop">
+          <div class="demo-card">
+            <h3 class="title is-5">Semantic</h3>
+            <p class="is-size-6 has-text-grey">Tasks across sub-capabilities of semantic understanding.</p>
+            
+            <p class="has-text-weight-semibold is-size-6 mt-3">
+              Set 1 (1-1) <span class="tag is-info ml-2">Sub-cap: Comprehension &amp; Memory</span>
+            </p>
+            <div class="set-block">
+              <div class="columns is-variable is-4">
+                <div class="column is-half">
+                  <audio class="demo-audio" controls>
+                    <source src="#" type="audio/wav">
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+                <div class="column is-half">
+                  <audio class="demo-audio" controls>
+                    <source src="#" type="audio/wav">
+                  </audio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- Paralinguistic -->
+        <div class="column is-12-tablet is-6-desktop">
+          <div class="demo-card">
+            <h3 class="title is-5">Paralinguistic</h3>
+            <p class="is-size-6 has-text-grey">Tasks emphasize tone, emotion, emphasis, and prosody.</p>
+            
+            <p class="has-text-weight-semibold is-size-6 mt-3">
+              Set 1 (1-1) <span class="tag is-warning ml-2">Sub-cap: Emotion Recognition</span>
+            </p>
+            <div class="set-block">
+              <div class="columns is-variable is-4">
+                <div class="column is-half">
+                  <audio class="demo-audio" controls>
+                    <source src="#" type="audio/wav">
+                  </audio>
+                </div>
+                <div class="column is-half">
+                  <audio class="demo-audio" controls>
+                    <source src="#" type="audio/wav">
+                  </audio>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+      </div>
+    </div>
+  </section>
 
+  <!-- Results Carousel -->
+  <section class="hero is-small" id="pdf-results">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3 has-text-centered">Evaluation Results</h2>
 
-<!--BibTex citation -->
+        <div class="carousel-container results-carousel-container">
+          <div class="carousel-wrapper" id="results-carousel-wrapper">
+            
+            <!-- Slide 1: Audio evaluation -->
+            <div class="carousel-item results-carousel-item">
+              <div class="card" style="border-radius:16px;">
+                <div class="card-content">
+                  <p class="title is-5 mb-3">Audio Evaluation Results (Arena &amp; Rubrics)</p>
+                  <figure class="image">
+                    <img src="https://via.placeholder.com/800x600/ff3860/ffffff?text=Audio+Evaluation+Results" 
+                         alt="Audio Evaluation Results"
+                         style="border-radius:12px;"/>
+                  </figure>
+                  <div class="buttons is-centered mt-3">
+                    <a class="button is-small is-dark is-rounded" href="#" target="_blank">
+                      Open Image
+                    </a>
+                    <a class="button is-small is-light is-rounded" href="#" download>
+                      Download
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Bias analysis -->
+            <div class="carousel-item results-carousel-item">
+              <div class="card" style="border-radius:16px;">
+                <div class="card-content">
+                  <p class="title is-5 mb-3">Bias Analysis</p>
+                  <figure class="image">
+                    <img src="https://via.placeholder.com/800x600/ffdd57/000000?text=Bias+Analysis" 
+                         alt="Bias Analysis"
+                         style="border-radius:12px;"/>
+                  </figure>
+                  <div class="buttons is-centered mt-3">
+                    <a class="button is-small is-dark is-rounded" href="#" target="_blank">
+                      Open Image
+                    </a>
+                    <a class="button is-small is-light is-rounded" href="#" download>
+                      Download
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Turn-level trends -->
+            <div class="carousel-item results-carousel-item">
+              <div class="card" style="border-radius:16px;">
+                <div class="card-content">
+                  <p class="title is-5 mb-3">Turn-level Trends</p>
+                  <figure class="image">
+                    <img src="https://via.placeholder.com/800x600/48c774/ffffff?text=Turn-level+Trends" 
+                         alt="Turn-level Trends"
+                         style="border-radius:12px;"/>
+                  </figure>
+                  <div class="buttons is-centered mt-3">
+                    <a class="button is-small is-dark is-rounded" href="#" target="_blank">
+                      Open Image
+                    </a>
+                    <a class="button is-small is-light is-rounded" href="#" download>
+                      Download
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <!-- Navigation -->
+          <button class="carousel-nav carousel-nav-left" id="results-prev">
+            <i class="fa fa-chevron-left"></i>
+          </button>
+          <button class="carousel-nav carousel-nav-right" id="results-next">
+            <i class="fa fa-chevron-right"></i>
+          </button>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="carousel-pagination" id="results-pagination">
+          <span class="carousel-dot active" data-slide="0"></span>
+          <span class="carousel-dot" data-slide="1"></span>
+          <span class="carousel-dot" data-slide="2"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Findings -->
+  <section class="section" id="results-analysis">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Experiment Results — Key Findings</h2>
+      <div class="content has-text-justified">
+        <ul class="key-findings">
+          <li><strong>Overall trends:</strong> Models are strongest on the <em>Semantic</em> dimension, with noticeable drops on <em>Paralinguistic</em> and <em>Ambient</em> tasks.</li>
+          <li><strong>Agreement between protocols:</strong> Arena and Rubrics rankings are broadly consistent and complementary, but conclusions are robust only when performance gaps are sufficiently large.</li>
+          <li><strong>LLM judging:</strong> LLM–human agreement improves when differences are clear or scales are explicit; however, automated judges show position and length biases and struggle with nonverbal acoustic cues.</li>
+          <li><strong>Dialogue efficiency:</strong> Longer inputs/outputs often correlate with higher scores, suggesting a tendency to trade verbosity for perceived coherence.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BibTeX -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@article{mtalk-bench-2024,
+  title={MTalk-Bench: Evaluating Speech-to-Speech Models in Multi-Turn Dialogues via Arena-style and Rubrics Protocols},
+  author={First Author and Second Author and Third Author},
+  journal={Conference Name},
+  year={2024}
+}</code></pre>
     </div>
-</section>
-<!--End BibTex citation -->
-
+  </section>
 
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+  <script>
+    // Custom Carousel Implementation
+    class CustomCarousel {
+      constructor(wrapperId, paginationId, prevBtnId, nextBtnId) {
+        this.wrapper = document.getElementById(wrapperId);
+        this.pagination = document.getElementById(paginationId);
+        this.prevBtn = document.getElementById(prevBtnId);
+        this.nextBtn = document.getElementById(nextBtnId);
+        this.items = this.wrapper.querySelectorAll('.carousel-item');
+        this.currentIndex = 0;
+        this.autoplayInterval = null;
+        
+        this.init();
+      }
+      
+      init() {
+        this.updateCarousel();
+        this.bindEvents();
+        this.startAutoplay();
+      }
+      
+      bindEvents() {
+        this.prevBtn.addEventListener('click', () => this.prev());
+        this.nextBtn.addEventListener('click', () => this.next());
+        
+        this.pagination.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+          dot.addEventListener('click', () => this.goToSlide(index));
+        });
+        
+        // Pause autoplay on hover
+        this.wrapper.addEventListener('mouseenter', () => this.stopAutoplay());
+        this.wrapper.addEventListener('mouseleave', () => this.startAutoplay());
+      }
+      
+      updateCarousel() {
+        const translateX = -this.currentIndex * 100;
+        this.wrapper.style.transform = `translateX(${translateX}%)`;
+        
+        // Update pagination
+        this.pagination.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+          dot.classList.toggle('active', index === this.currentIndex);
+        });
+      }
+      
+      next() {
+        this.currentIndex = (this.currentIndex + 1) % this.items.length;
+        this.updateCarousel();
+      }
+      
+      prev() {
+        this.currentIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
+        this.updateCarousel();
+      }
+      
+      goToSlide(index) {
+        this.currentIndex = index;
+        this.updateCarousel();
+      }
+      
+      startAutoplay() {
+        this.stopAutoplay();
+        this.autoplayInterval = setInterval(() => this.next(), 5000);
+      }
+      
+      stopAutoplay() {
+        if (this.autoplayInterval) {
+          clearInterval(this.autoplayInterval);
+          this.autoplayInterval = null;
+        }
+      }
+    }
 
-    <!-- End of Statcounter Code -->
+    // Initialize carousels when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize framework figures carousel
+      new CustomCarousel(
+        'fig-carousel-wrapper',
+        'fig-pagination', 
+        'fig-prev',
+        'fig-next'
+      );
+      
+      // Initialize results carousel (no autoplay)
+      const resultsCarousel = new CustomCarousel(
+        'results-carousel-wrapper',
+        'results-pagination',
+        'results-prev', 
+        'results-next'
+      );
+      resultsCarousel.stopAutoplay(); // Disable autoplay for results
+    });
+  </script>
 
-  </body>
-  </html>
+</body>
+</html>
