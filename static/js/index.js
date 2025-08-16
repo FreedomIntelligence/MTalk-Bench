@@ -2,26 +2,34 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const common = {
+  if (typeof bulmaCarousel === 'undefined') {
+    document.querySelectorAll('.carousel').forEach(el => el.setAttribute('data-fallback', 'true'));
+    if (typeof bulmaSlider !== 'undefined') bulmaSlider.attach();
+    return;
+  }
+
+  const figOpts = {
     slidesToScroll: 1,
     slidesToShow: 1,
-    infinite: true,
+    loop: true,             
+    navigation: true,
+    pagination: true,
     autoplay: true,
     autoplaySpeed: 5000,
     pauseOnHover: true,
-    pagination: true,
-    navigation: true,
   };
 
-  // 只按 id 初始化，避免重复 attach 所有 .carousel
-  window._figCarousel = bulmaCarousel.attach('#fig-carousel', common)[0];
-  window._pngCarousel = bulmaCarousel.attach('#pdf-carousel', { ...common, autoplay: false })[0];
+  const pdfOpts = { ...figOpts, autoplay: false };
+  window._figCarousel = bulmaCarousel.attach('#fig-carousel', figOpts)[0];
+  window._pdfCarousel = bulmaCarousel.attach('#pdf-carousel', pdfOpts)[0];
 
   if (typeof bulmaSlider !== 'undefined') bulmaSlider.attach();
 
-  // 图片加载完后刷新一次，防止初始宽度为 0
   window.addEventListener('load', () => {
     _figCarousel && _figCarousel.refresh && _figCarousel.refresh();
-    _pngCarousel && _pngCarousel.refresh && _pngCarousel.refresh();
+    _pdfCarousel && _pdfCarousel.refresh && _pdfCarousel.refresh();
+
+    console.log('fig items =', document.querySelectorAll('#fig-carousel .carousel-item').length);
+    console.log('pdf items =', document.querySelectorAll('#pdf-carousel .carousel-item').length);
   });
 });
