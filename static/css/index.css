@@ -132,3 +132,8 @@ body {
 .eql-cntrb { 
   font-size: smaller;
 }
+
+.carousel { overflow: hidden; }
+.carousel .carousel-item { display: none !important; }
+.carousel .carousel-item.is-active { display: block !important; }
+
