@@ -133,5 +133,24 @@ body {
   font-size: smaller;
 }
 
+<!-- 轻量样式（可并入 static/css/index.css） -->
+<style>
+  #demos .demo-card { border-radius: 14px; }
+  #demos .demo-audio { width: 100%; }
+  #demos .columns.is-variable > .column { display: flex; }
+  #demos .demo-card { width: 100%; display: flex; flex-direction: column; }
+  #demos .set-block { margin-top: .5rem; }
+</style>
 
+<!-- 可选：避免多段音频同时播放 -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const players = Array.from(document.querySelectorAll('.demo-audio'));
+  players.forEach(p => {
+    p.addEventListener('play', () => {
+      players.forEach(other => { if (other !== p) other.pause(); });
+    });
+  });
+});
+</script>
 
