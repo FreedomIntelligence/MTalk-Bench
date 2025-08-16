@@ -703,8 +703,7 @@
       }
       
       updateCarousel() {
-        const n = this.items.length || 1;
-        const translateX = -(this.currentIndex * (100 / n)); // 关键改动
+        const translateX = -this.currentIndex * 100;
         this.wrapper.style.transform = `translateX(${translateX}%)`;
       
         // Update pagination
