@@ -56,12 +56,12 @@
     }
 
     .carousel-item {
-      min-width: 100%;
-      flex-shrink: 0;
+      flex: 0 0 100%;          /* 精确占满一屏，等价于 width: 100% 且不收缩 */
+      box-sizing: border-box;  /* 把 padding 计算进 100% 宽度，避免溢出 */
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem; /* 减少内边距 */
+      padding: 1rem;
     }
 
     .carousel-item figure {
@@ -359,7 +359,7 @@
                   <figcaption class="figure-caption">
                     <strong>Figure 1. MTalk-Bench overview.</strong> Three speech-aware dimensions
                     (Semantic, Paralinguistic, Ambient) organized into a hierarchical capability taxonomy,
-                    evaluated via a <em>dual-method</em> design: pairwise Arena (relative, Elo) and rubric-based scoring (absolute),
+                    evaluated via a <em>dual-method</em> design: Arena-style and rubric-based evaluation,
                     executed by both human raters and LLM-as-a-judge.
                   </figcaption>
                 </figure>
@@ -370,9 +370,8 @@
                 <figure class="image">
                   <img src="static/images/Data_construction_comics_new.png" alt="Data pipeline" loading="lazy">
                   <figcaption class="figure-caption">
-                    <strong>Figure 2. Data construction pipeline.</strong> Scenario→capability mapping → multi-turn script authoring →
-                    human speech recording → Seed-VC timbre conversion (for child/elder voices) → ambient-sound integration
-                    (e.g., Freesound / FSD50K / Pixabay) → multi-round QA → inputs to Arena &amp; Rubrics evaluations.
+                    <strong>Figure 2. Data construction pipeline.</strong> Scenario-capability mapping → multi-turn script authoring →
+                    human speech recording → Seed-VC timbre conversion (for child/elder voices) → ambient-sound integration → quality checking → inputs to Arena &amp; Rubrics evaluations.
                   </figcaption>
                 </figure>
               </div>
@@ -400,22 +399,16 @@
     <div class="columns is-variable is-6 is-multiline">
       <div class="column is-12">
         <div class="content has-text-justified">
-          <h3 class="title is-4">Framework</h3>
           <p>
             MTalk-Bench spans <em>Semantic</em>, <em>Paralinguistic</em>, and <em>Ambient</em> dimensions, with a two-level capability taxonomy
-            (core skills → fine-grained skills). Nine real-world scenarios are linked via a scenario→capability mapping to ensure ecological validity
+            (foundational capabilities → fine-grained capabilities). Nine real-world scenarios are linked via a scenario-capability mapping to ensure ecological validity
             while keeping each dialogue diagnostic by design.
           </p>
-        </div>
-      </div>
 
-      <div class="column is-12">
-        <div class="content has-text-justified">
-          <h3 class="title is-4">Evaluation</h3>
           <p>
-            We use complementary protocols: <strong>Arena</strong> (blind pairwise preferences aggregated as Elo for relative ordering)
-            and <strong>Rubrics</strong> (hierarchical, criteria-based scoring for absolute diagnostics). Both human raters and LLM-as-a-judge
-            are employed to balance reliability, scalability, and speech-awareness.
+            We use complementary protocols: <strong>Arena-style</strong> evaluation (blind pairwise preferences aggregated as Elo for relative ordering)
+            and <strong>Rubric-based</strong> evaluation (hierarchical, criteria-based scoring for absolute diagnostics). Both human raters and LLM-as-a-judge
+            are employed to do the evaluation.
           </p>
         </div>
       </div>
@@ -439,7 +432,7 @@
           <!-- Set 1: Comprehension & Memory -->
           <div class="set-block">
             <div class="set-header">
-              <p class="set-title">Set 1-1</p>
+              <p class="set-title">sample 1</p>
               <span class="tag subcap">Comprehension & Memory</span>
             </div>
             <div class="audio-grid">
@@ -456,7 +449,7 @@
           <!-- Set 2: Reasoning & Execution -->
           <div class="set-block">
             <div class="set-header">
-              <p class="set-title">Set 1-2</p>
+              <p class="set-title">sample 2</p>
               <span class="tag subcap">Reasoning & Execution</span>
             </div>
             <div class="audio-grid">
@@ -472,7 +465,7 @@
           <!-- Set 3: Security & Assessment -->
           <div class="set-block">
             <div class="set-header">
-              <p class="set-title">Set 1-3</p>
+              <p class="set-title">sample 3</p>
               <span class="tag subcap">Security & Assessment</span>
             </div>
             <div class="audio-grid">
@@ -511,7 +504,7 @@
           <!-- Set 2: Personalized Expressive Modeling -->
           <div class="set-block">
             <div class="set-header">
-              <p class="set-title">Set 1-2</p>
+              <p class="set-title">sample 2</p>
               <span class="tag subcap">Personalized Modeling</span>
             </div>
             <div class="audio-grid">
@@ -527,7 +520,7 @@
           <!-- Set 3: Feature Generation -->
           <div class="set-block">
             <div class="set-header">
-              <p class="set-title">Set 1-3</p>
+              <p class="set-title">sample 3</p>
               <span class="tag subcap">Paralinguistic Feature Generation</span>
             </div>
             <div class="audio-grid">
@@ -567,7 +560,7 @@
           <!-- Set 2: Ambient Understanding -->
           <div class="set-block">
             <div class="set-header">
-              <p class="set-title">Set 1-2</p>
+              <p class="set-title">sample 2</p>
               <span class="tag subcap">Ambient Sound Understanding</span>
             </div>
             <div class="audio-grid">
@@ -583,7 +576,7 @@
           <!-- Set 3: Multi-party Understanding -->
           <div class="set-block">
             <div class="set-header">
-              <p class="set-title">Set 1-3</p>
+              <p class="set-title">sample 3</p>
               <span class="tag subcap">Multi-party Understanding</span>
             </div>
             <div class="audio-grid">
@@ -618,8 +611,7 @@
                 <figure class="image">
                   <img src="static/images/audio_eval.png" alt="Overall evaluation results">
                   <figcaption class="figure-caption">
-                    <strong>Overall results (Table 2).</strong> Arena (Elo, relative) and Rubrics (×100, absolute)
-                    present a consistent landscape across overall and per-dimension scores.
+                    <strong>Figure 3. Evaluation Results (Table 2)</strong> — Arena: Elo ratings per dimension and overall; Rubrics: absolute scores (×100). Models sorted by human overall score; ↑ = better.
                   </figcaption>
                 </figure>
               </div>
@@ -633,8 +625,7 @@
                 <figure class="image">
                   <img src="static/images/win_rates.png" alt="Win rates across evaluators">
                   <figcaption class="figure-caption">
-                    <strong>Win-rate profiles.</strong> Cross-evaluator win rates show strong systems,
-                    yet many model pairs remain statistically tied rather than yielding a single dominant system.
+                    <strong>Figure 4. Win rate of models</strong> — Illustrate win rates of different models across different evaluators in arena-style evaluation, revealing numerous statistically tied outcomes rather than a single dominant system.
                   </figcaption>
                 </figure>
               </div>
@@ -648,8 +639,7 @@
                 <figure class="image">
                   <img src="static/images/turn_level_trends.png" alt="Turn-level trends and duration correlation">
                   <figcaption class="figure-caption">
-                    <strong>Turn-level trends &amp; duration correlation.</strong> Quality often dips in early turns and then recovers
-                    as responses become longer; duration correlates with higher scores, but gains plateau beyond a minimal length.
+                    <strong>Figure 5. Turn-level trends</strong> — Quality often dips in early turns and recovers as models produce longer outputs; audio duration correlates with higher Arena/Rubrics scores, but after a minimal length the gains plateau, indicating that verbosity ≠ quality.
                   </figcaption>
                 </figure>
               </div>
@@ -663,8 +653,7 @@
                 <figure class="image">
                   <img src="static/images/bias_analysis.png" alt="Bias analysis of evaluators">
                   <figcaption class="figure-caption">
-                    <strong>LLM-as-judge bias.</strong> Compared to humans (near-neutral positional preference),
-                    LLM judges exhibit measurable <em>position</em> and stronger <em>length</em> biases in Arena scoring.
+                    <strong>Figure 6. Bias analysis of evaluators</strong> — Compared to humans (near-neutral positional preference), LLM judges exhibit measurable <em>position</em> and stronger <em>length</em> biases when scoring Arena pairs (e.g., length bias significantly positive) these structural biases should be accounted for in automated judging.
                   </figcaption>
                 </figure>
               </div>
@@ -678,8 +667,7 @@
                 <figure class="image">
                   <img src="static/images/arena_rubrics_consistency.png" alt="Consistency and pitfalls">
                   <figcaption class="figure-caption">
-                    <strong>Consistency &amp; pitfalls.</strong> The two protocols are broadly consistent with good internal reliability;
-                    however, when performance gaps are small, conclusions remain unstable even with more comparisons.
+                    <strong>Figure 7. Consistency of Arena and Rubrics</strong> — Internal logical consistency of each evaluator across the Arena-style and Rubric-based formats. The results show that all evaluators are validated for their judgments’ reliability regardless of the evaluation format.
                   </figcaption>
                 </figure>
               </div>
@@ -716,15 +704,15 @@
     <h2 class="title is-3 has-text-centered">Experiment Results — Model Performance</h2>
     <div class="content has-text-justified">
       <ul class="key-findings">
-        <li><strong>Dimension gap:</strong> Models perform best on the <em>Semantic</em> dimension and lag on <em>Paralinguistic</em> and <em>Ambient</em> tasks.</li>
-        <li><strong>Dialogue dynamics:</strong> Early-turn quality often dips and later recovers with longer outputs; duration correlates with higher scores but shows diminishing returns.</li>
-        <li><strong>Design matters:</strong> Modality-aware, task-specific designs generally outperform brute parameter scaling for multi-turn S2S dialogue.</li>
+        <li><strong>Dimension gap:</strong> Top models have not yet reached high proficiency. They are overall strong in <em>semantics</em> but limited in <em>some specific semantic capability</em> like safety reasoning and <em>auditory cues (paralinguistic and ambient sound perception)</em>.</li>
+        <li><strong>Dialogue dynamics:</strong> Models recover from an early-turn quality dip by producing longer responses, trading efficiency for coherence. After a minimal length for clarity, more tokens often mean more fluff, not better answers.</li>
+        <li><strong>Design matters:</strong> When paired with large capacity, task specific designs deliver bigger gains than scale alone.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- Meta-Evaluation: Methods & Reliability (English-only) -->
+<!-- Meta-Evaluation: Methods & Reliability -->
 <section class="section" id="meta-eval">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Meta-Evaluation — Methods &amp; Reliability</h2>
