@@ -46,7 +46,7 @@
       position: relative;
       overflow: hidden;
       width: 100%;
-      height: 600px; /* Fixed height for consistency */
+      height: 500px; /* 减少高度 */
     }
 
     .carousel-wrapper {
@@ -61,12 +61,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      padding: 1rem; /* 减少内边距 */
     }
 
     .carousel-item figure {
       width: 100%;
-      max-width: 800px;
+      max-width: 900px; /* 增加最大宽度 */
       margin: 0 auto;
     }
 
@@ -175,9 +175,9 @@
       padding: 0.5rem 0;
     }
 
-    /* Results carousel specific styling */
+    /* Results carousel specific styling - 调整布局使caption在图片下方 */
     .results-carousel-container {
-      height: 700px; /* Larger height for result images */
+      height: 600px; /* 减少高度 */
     }
 
     .results-carousel-item .card {
@@ -190,23 +190,63 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      padding: 0.5rem; /* 减少内边距 */
     }
 
     .results-carousel-item figure {
       flex: 1;
       display: flex;
+      flex-direction: column; /* 改为纵向布局 */
+      justify-content: center;
       align-items: center;
+      margin: 0; /* 移除默认边距 */
+    }
+
+    .results-carousel-item figure img {
+      width: 100%;
+      height: auto;
+      max-height: 450px; /* 减少图片最大高度 */
+      object-fit: contain;
     }
 
     .figure-caption,
     .image-caption {
-      margin-top: 0.5rem;
+      margin-top: 0.75rem; /* 减少上边距 */
+      margin-bottom: 0; /* 移除下边距 */
       font-size: 0.95rem;
       line-height: 1.4;
       color: rgba(0,0,0,0.7);
       text-align: center;
+      width: 100%;
     }
 
+    /* 减少section之间的间距 */
+    .section {
+      padding: 2rem 1.5rem; /* 减少section的padding */
+    }
+
+    .hero.is-small .hero-body {
+      padding: 1.5rem 1.5rem; /* 减少hero的padding */
+    }
+
+    /* Compact spacing for the two findings sections */
+    #results-analysis .content,
+    #meta-eval .content {
+      line-height: 1.5;              /* 收紧段内行距 */
+    }
+    
+    #results-analysis .key-findings,
+    #meta-eval .key-findings {
+      margin-top: 0.25rem;           /* 收紧列表上下空白 */
+      margin-bottom: 0.75rem;
+    }
+    
+    #results-analysis .key-findings li,
+    #meta-eval .key-findings li {
+      margin-bottom: 0.35rem;        /* 收紧条目间距（原来是 1rem） */
+      padding: 0.15rem 0;            /* 收紧条目内边距（原来是 0.5rem 0） */
+      line-height: 1.45;             /* 子弹条目文本行距更紧一点 */
+    }
   </style>
 </head>
 <body>
@@ -284,23 +324,14 @@
               Our dual-method evaluation framework combines <em>Arena-style</em> evaluation (pairwise comparison) and <em>Rubrics-based</em> 
               evaluation (absolute scoring) for relative and absolute assessment. The benchmark includes both model and human outputs, evaluated by 
               human evaluators and LLMs. 
-            </p>
-            
-            <p>
               Experimental results reveal two sets of findings. <strong>Overall performance of S2S LLMs:</strong> 
               (1) models excel at semantic information processing yet underperform on paralinguistic information and ambient sounds perception; 
               (2) Models typically regain coherence by increasing response length, sacrificing efficiency in multi-turn dialogues; 
               (3) modality-aware, task-specific designs outperform brute scaling. 
-            </p>
-            
-            <p>
               <strong>Evaluation framework and reliability:</strong> 
               (1) Arena and Rubrics yield consistent, complementary rankings, but reliable distinctions emerge only when performance gaps are large; 
               (2) LLM-as-a-judge aligns with humans when gaps are clear or criteria explicit, but exhibits position and length biases and is reliable 
               on nonverbal evaluation only with text annotations. 
-            </p>
-            
-            <p>
               These results highlight current limitations in S2S evaluation and the need for more robust, speech-aware assessment frameworks.
             </p>
 
@@ -404,9 +435,6 @@
       <div class="column is-12-tablet is-4-desktop">
         <div class="box demo-card" data-demo="Semantic">
           <h3 class="title is-5">Semantic</h3>
-          <p class="description">
-            Tasks across sub-capabilities of semantic understanding.
-          </p>
 
           <!-- Set 1: Comprehension & Memory -->
           <div class="set-block">
@@ -463,9 +491,6 @@
       <div class="column is-12-tablet is-4-desktop">
         <div class="box demo-card" data-demo="Paralinguistic">
           <h3 class="title is-5">Paralinguistic</h3>
-          <p class="description">
-            Tasks emphasize tone, emotion, emphasis, and prosody.
-          </p>
 
           <!-- Set 1: Emotion Recognition -->
           <div class="set-block">
@@ -503,7 +528,7 @@
           <div class="set-block">
             <div class="set-header">
               <p class="set-title">Set 1-3</p>
-              <span class="tag subcap">Feature Generation</span>
+              <span class="tag subcap">Paralinguistic Feature Generation</span>
             </div>
             <div class="audio-grid">
               <audio class="demo-audio" controls preload="none" aria-label="Paralinguistic 1-3 — turn 1">
@@ -521,15 +546,13 @@
       <div class="column is-12-tablet is-4-desktop">
         <div class="box demo-card" data-demo="Ambient">
           <h3 class="title is-5">Ambient</h3>
-          <p class="description">
-            Tasks focus on recognizing and leveraging background sounds.
-          </p>
+
 
           <!-- Set 1: Ambient Sound Understanding -->
           <div class="set-block">
             <div class="set-header">
               <p class="set-title">Set 1-1</p>
-              <span class="tag subcap">Sound Understanding</span>
+              <span class="tag subcap">Ambient Sound Understanding</span>
             </div>
             <div class="audio-grid">
               <audio class="demo-audio" controls preload="none" aria-label="Ambient sample1 — turn 1">
@@ -545,7 +568,7 @@
           <div class="set-block">
             <div class="set-header">
               <p class="set-title">Set 1-2</p>
-              <span class="tag subcap">Sound Understanding</span>
+              <span class="tag subcap">Ambient Sound Understanding</span>
             </div>
             <div class="audio-grid">
               <audio class="demo-audio" controls preload="none" aria-label="Ambient sample2 — turn 1">
@@ -580,11 +603,12 @@
 </section>
   
 
-<!-- Results Carousel (figures only, concise captions; English-only) -->
 <section class="hero is-small" id="pdf-results">
   <div class="hero-body">
+    <h2 class="title is-3 has-text-centered">Results Analysis</h2>
     <div class="container">
       <div class="carousel-container results-carousel-container">
+        
         <div class="carousel-wrapper" id="results-carousel-wrapper">
 
           <!-- Slide: Overall results -->
@@ -684,11 +708,12 @@
     </div>
   </div>
 </section>
+  
 
-<!-- Results: Model Performance (English-only) -->
+<!-- Results: Model Performance -->
 <section class="section" id="results-analysis">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Experiment Results — Model Performance</h2>
+    <h2 class="title is-3 has-text-centered">Experiment Results — Model Performance</h2>
     <div class="content has-text-justified">
       <ul class="key-findings">
         <li><strong>Dimension gap:</strong> Models perform best on the <em>Semantic</em> dimension and lag on <em>Paralinguistic</em> and <em>Ambient</em> tasks.</li>
@@ -702,7 +727,7 @@
 <!-- Meta-Evaluation: Methods & Reliability (English-only) -->
 <section class="section" id="meta-eval">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Meta-Evaluation — Methods &amp; Reliability</h2>
+    <h2 class="title is-3 has-text-centered">Meta-Evaluation — Methods &amp; Reliability</h2>
     <div class="content has-text-justified">
       <ul class="key-findings">
         <li><strong>Arena × Rubrics:</strong> Broadly consistent and complementary — relative ordering vs. absolute diagnostics.</li>
