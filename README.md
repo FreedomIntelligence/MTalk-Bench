@@ -82,8 +82,8 @@ If you use MTalk-Bench in your research, please cite:
 ```bibtex
 @misc{mtalkbench2025,
   title={MTalk-Bench: Evaluating Speech-to-Speech Models in Multi-Turn Dialogues via Arena-style and Rubrics Protocols},
-  author={xxxxxx},
+  author={Yuhao Du, Qianwei Huang, Guo Zhu, Zhanchen Dai, Sunian Chen, Qiming Zhu, Yuhao Zhang, Li Zhou, and Benyou Wang},
   year={2025},
-  url={xxxxxxxx},
+  url={[xxxxxxxx](https://freedomintelligence.github.io/MTalk-Bench/)},
 }
 ```
