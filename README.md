@@ -80,10 +80,13 @@ Available parameters:
 If you use MTalk-Bench in your research, please cite:
 
 ```bibtex
-@misc{mtalkbench2025,
-  title={MTalk-Bench: Evaluating Speech-to-Speech Models in Multi-Turn Dialogues via Arena-style and Rubrics Protocols},
-  author={Yuhao Du, Qianwei Huang, Guo Zhu, Zhanchen Dai, Sunian Chen, Qiming Zhu, Yuhao Zhang, Li Zhou, and Benyou Wang},
-  year={2025},
-  url={https://freedomintelligence.github.io/MTalk-Bench/},
+@misc{du2025mtalkbenchevaluatingspeechtospeechmodels,
+      title={MTalk-Bench: Evaluating Speech-to-Speech Models in Multi-Turn Dialogues via Arena-style and Rubrics Protocols}, 
+      author={Yuhao Du and Qianwei Huang and Guo Zhu and Zhanchen Dai and Sunian Chen and Qiming Zhu and Yuhao Zhang and Li Zhou and Benyou Wang},
+      year={2025},
+      eprint={2508.18240},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2508.18240}, 
 }
 ```
