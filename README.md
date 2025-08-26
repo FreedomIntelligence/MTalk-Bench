@@ -1,4 +1,8 @@
 # MTalk-Bench: Evaluating Speech-to-Speech Models in Multi-Turn Dialogues via Arena-style and Rubrics Protocols
+[📄 Paper (arXiv)](https://arxiv.org/abs/2508.18240) ·
+[🌐 Project Page](https://freedomintelligence.github.io/MTalk-Bench/) ·
+[🤗 Dataset](https://huggingface.co/datasets/FreedomIntelligence/MTalk-Bench) ·
+[💻 Code](https://github.com/FreedomIntelligence/MTalk-Bench)
 
 **MTalk-Bench** is a benchmark designed to evaluate **speech-to-speech (S2S) large language models (LLMs)** in **realistic, multi-turn dialogue scenarios**. It offers both **arena-style** and **rubric-based** evaluation protocols to comprehensively assess models across a diverse range of **linguistic**, **paralinguistic**, and **acoustic** dimensions.
 
