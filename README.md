@@ -86,7 +86,7 @@ If you use MTalk-Bench in your research, please cite:
 ```bibtex
 @misc{du2025mtalkbenchevaluatingspeechtospeechmodels,
       title={MTalk-Bench: Evaluating Speech-to-Speech Models in Multi-Turn Dialogues via Arena-style and Rubrics Protocols}, 
-      author={Yuhao Du and Qianwei Huang and Guo Zhu and Zhanchen Dai and Shunian Chen and Qiming Zhu and Yuhao Zhang and Li Zhou and Benyou Wang},
+      author={Yuhao Du and Qianwei Huang and Guo Zhu and Zhanchen Dai and Shunian Chen and Qiming Zhu and Yuhao Zhang and Li Zhou and Benyou Wang and Haizhou Li},
       year={2025},
       eprint={2508.18240},
       archivePrefix={arXiv},
