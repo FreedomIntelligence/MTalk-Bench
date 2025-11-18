@@ -68,7 +68,7 @@ python ./src/audio_arena_api.py \
 
 # Rubric-based example:
 
-python ./src/audio_rubric_api.py \
+python ./src/audio_rubric_based.py \
     --eval_type paralinguistic \
     --judge_model gemini-2.5-pro \
     --new_data_file ./data/sample.json
