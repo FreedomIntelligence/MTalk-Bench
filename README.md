@@ -61,7 +61,7 @@ Format your results as a `.json` file according to the required schema (example 
 You can choose between **arena-style** and **rubric-based** evaluations, and select the type of information to evaluate (`semantic`, `paralinguistic`, or `ambient`).
 ```bash
 # Arena-style example:
-python ./src/audio_arena_api.py \
+python ./src/audio_arena_style.py \
     --eval_type semantic \
     --judge_model gpt-4o-audio-preview \
     --new_data_file ./data/sample.json
