@@ -51,7 +51,7 @@ NAME_IN_JSON = {
 }[EVAL_TYPE]
 
 # HuggingFace dataset configuration
-HF_DATASET_ID = "./MTalk-Bench-Data"
+HF_DATASET_ID = "./MTalk-Bench"
 
 # Output directory
 OUTPUT_DIR = f"arena_{JUDGE_MODEL}_hybrid_eval_output_{EVAL_TYPE}"
@@ -95,8 +95,8 @@ def load_hf_dataset():
     print(f"Loading dataset from HuggingFace: {HF_DATASET_ID}")
     try:
         dataset = load_dataset(HF_DATASET_ID)
-        print(f"HF dataset loaded successfully, total records: {len(dataset['train'])}")
-        return dataset['train']
+        print(f"HF dataset loaded successfully, total records: {len(dataset['test'])}")
+        return dataset['test']
     except Exception as e:
         print(f"Warning: Cannot load HF dataset {HF_DATASET_ID}: {e}")
         return None
